@@ -13,14 +13,14 @@
           </div>
           <div class="card-body">
             <p class="card-description text-center">Login with your id and password</p>
-            <div class="bmd-form-group{{ $errors->has('id') ? ' has-danger' : '' }}">
+            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
-                    <i class="material-icons">id</i>
+                    <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="text" name="id" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email', '') }}" required>
+                <input type="text" name="email" class="form-control" placeholder="{{ __('ID...') }}" value="{{ old('email', '') }}" required>
               </div>
               @if ($errors->has('email'))
                 <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
