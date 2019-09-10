@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-	return redirect("/home");
+    return view('welcome');
 });
+// Route::get('/', function () {
+// 	return redirect("/home");
+// });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

@@ -392,7 +392,9 @@
       $('#avatar_image').click(function() {
         $('#avatar').click();
       });
-      $('[data-toggle="datepicker"]').datepicker();
+      $('[data-toggle="datepicker"]').datepicker({
+        format:'yyyy-mm-dd'
+      });
     });
 
     function createObjectURL(object) {

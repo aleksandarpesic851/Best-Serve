@@ -39,7 +39,7 @@
 
             <div class="row">
               <div class="col-12 text-right">
-                <a href="{{ route('blacklist.create') }}" class="btn btn-sm btn-primary">{{ __('Add Report') }}</a>
+                <a href="#" class="btn btn-sm btn-primary">{{ __('Search') }}</a>
               </div>
             </div>
 
@@ -90,6 +90,9 @@
             processing: true,
             serverSide: true,
             searching: false,
+            language: {
+              "emptyTable": "WE CANNOT FIND THE INFORMATION PROVIDED, TRY SEARCHING WITH ANOTHER FIELD"
+            },
             ajax: {
               url: "/blacklist/getdata",
               type: 'GET',

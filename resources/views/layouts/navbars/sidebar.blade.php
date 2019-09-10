@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="{{ route('home') }}" class="simple-text logo-normal">
+    <a href="/" class="simple-text logo-normal">
       <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
       {{ __('Best Service') }}
     </a>
@@ -38,7 +38,12 @@
             <p>{{ __('Black Lists') }}</p>
         </a>
       </li>
-
+      <li class="nav-item{{ $activePage == 'blacklist-create' ? ' active' : '' }}">
+        <a class="nav-link" href="/blacklist/create">
+          <i class="material-icons">edit</i>
+            <p>{{ __('Add Report') }}</p>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

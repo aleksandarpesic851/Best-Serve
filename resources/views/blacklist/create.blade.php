@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'blacklist-management', 'titlePage' => __('Blacklist Management')])
+@extends('layouts.app', ['activePage' => 'blacklist-create', 'titlePage' => __('Blacklist Management')])
 
 @section('content')
   <div class="content">
@@ -356,7 +356,7 @@
 
                 <div class="row padding5">
                   <div class="col-sm-12">
-                      <label class="col-sm-3 col-form-label">{{ __('Report Details') }}</label>
+                      <label class="col-sm-12 col-form-label">{{ __('INSERT REPORT DETAILS HERE for HERE YOU CAN EXPLAIN THE SITUATION OR THE ACTIONS OF YOUR CLIENT') }}</label>
                       <div class="col-sm-12" style="border: 1px solid #ddd;">
                         <div class="form-group{{ $errors->has('content') ? ' has-danger' : '' }}">
                           <textarea class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" id="input-content" type="text" placeholder="{{ __('Insert report details here.') }}" value="{{ old('content') }}" required="true" aria-required="true" rows="10"></textarea>
@@ -390,7 +390,9 @@
       $('#avatar_image').click(function() {
         $('#avatar').click();
       });
-      $('[data-toggle="datepicker"]').datepicker();
+      $('[data-toggle="datepicker"]').datepicker({
+        format:'yyyy-mm-dd'
+      });
     });
 
     function createObjectURL(object) {
