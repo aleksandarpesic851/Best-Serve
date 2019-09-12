@@ -48,6 +48,7 @@ class CreateBlacklistsTable extends Migration
             $table->string('phone_no')->nullable();
             $table->unsignedInteger('created_by');
 
+            $table->string('content_files')->nullable();
             $table->timestamps();
         });
     }

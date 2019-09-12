@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <form enctype="multipart/form-data" method="post" action="{{ route('blacklist.store') }}" autocomplete="off" class="form-horizontal">
+          <form enctype="multipart/form-data" method="post" action="{{ route('blacklist.store') }}" autocomplete="off" class="form-horizontal" enctype="multipart/form-data">
             @csrf
             @method('post')
 
@@ -17,7 +17,7 @@
               <div class="card-body ">
                 <div class="row">
                   <div class="col-md-12 text-right">
-                      <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                      <a href="{{ route('blacklist.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
                 
@@ -27,7 +27,7 @@
                     <div class="row " style=" min-height: 100%; align-items: center;">
                       <img class="avatar-image" id="avatar_image" src="/uploads/avatars/user.png">
                     </div>
-                    <input id="avatar" type="file" name="avatar" style="display: none" onchange="updateAvatarImage(this)">
+                    <input id="avatar" type="file" name="avatar" style="display: none" onchange="updateAvatarImage(this)" accept="image/*">
                   </div>
 
                   <div class="col-sm-8">
@@ -343,7 +343,7 @@
                         <label class="col-sm-3 col-form-label">{{ __('Email') }}</label>
                         <div class="col-sm-9">
                           <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                            <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required />
+                            <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" />
                             @if ($errors->has('email'))
                               <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                             @endif
@@ -368,6 +368,22 @@
                     </div>
                 </div>
 
+                <div class="row padding5">
+                  <div class="input-group control-group increment col-sm-12">
+                    <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
+                    <div class="input-group-btn"> 
+                      <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                    </div>
+                  </div>
+                  <div class="clone hide">
+                    <div class="control-group input-group col-sm-12" style="margin-top:10px">
+                      <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
+                      <div class="input-group-btn"> 
+                        <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="card-footer ml-auto mr-auto">
@@ -387,12 +403,23 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+      
       $('#avatar_image').click(function() {
         $('#avatar').click();
       });
       $('[data-toggle="datepicker"]').datepicker({
         format:'yyyy-mm-dd'
       });
+
+      $(".btn-success").click(function(){ 
+          var html = $(".clone").html();
+          $(".increment").after(html);
+      });
+
+      $("body").on("click",".btn-danger",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+
     });
 
     function createObjectURL(object) {

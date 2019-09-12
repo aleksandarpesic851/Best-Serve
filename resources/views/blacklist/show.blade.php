@@ -19,20 +19,38 @@
                         </div>
                             
                         <div class="row">
-
-                            <div class="col-sm-3">
-                                <div class="row " style=" min-height: 100%; align-items: center;">
-                                    <img class="avatar-image" id="avatar_image" src="/uploads/blacklists/{{ old('avatar', $blacklist->avatar) }}">
+                            <div class="col-sm-4 offset-sm-1">
+                                <div class="row ">
+                                    <div class="col-sm-12"  style="min-height: 100%; align-items: center; text-align: center">
+                                        <img class="avatar-image" id="avatar_image" src="/uploads/blacklists/{{ old('avatar', $blacklist->avatar) }}">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-3 col-form-label">{{ __('Report Contents') }}</label>
+                                        <div class="col-sm-12">
+                                            <h5>{{ old('content', $blacklist->content) }}</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="col-sm-8">
-                                <div class="row">
-                                    <label class="col-sm-3 col-form-label">{{ __('Report Contents') }}</label>
-                                    <div class="col-sm-12">
-                                        <h5>{{ old('content', $blacklist->content) }}</h5>
+                            <div class="col-sm-6">
+                                <div id="content-images" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner" id="carousel-content">
+                                        <div style="align-items: center;">
+                                            <p>There is no attachted images</p>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div id="carousel-controler" style='display: none'>
+                                        <a class="carousel-control-prev" href="#content-images" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#content-images" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
 
@@ -248,3 +266,30 @@
     </div>
 </div>
 @endsection
+
+@push('js')
+<script type="text/javascript">
+    <?php
+        echo "const content_images = ". json_encode(json_decode($blacklist->content_files)) . ";\n";
+    ?>
+    $(document).ready(function() {
+        
+        if (content_images) {
+            let carousel_html = "";
+            let i = 0;
+            content_images.forEach(function(element) {
+                if (i === 0) {
+                    carousel_html += '<div class="carousel-item active">';
+                } else {
+                    carousel_html += '<div class="carousel-item justify-content-center">';
+                }
+                carousel_html += '<img class="d-block slider-image" src="/uploads/blacklist_contents/' + element + '">';
+                carousel_html += '</div>';
+                i++;
+            });
+            $('#carousel-content').html(carousel_html);
+            $('#carousel-controler').show();
+        }
+    });
+</script>
+@endpush

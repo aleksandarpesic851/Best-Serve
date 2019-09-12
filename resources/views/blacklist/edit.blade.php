@@ -370,6 +370,26 @@
                     </div>
                 </div>
 
+                <input type='hidden' id="image_names" name="image_names">
+                <div class="row padding5" id="image_div">
+                </div>
+
+                <div class="row padding5">
+                  <div class="input-group control-group increment col-sm-12">
+                    <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
+                    <div class="input-group-btn"> 
+                      <button class="btn btn-success" type="button">Add</button>
+                    </div>
+                  </div>
+                  <div class="clone hide">
+                    <div class="control-group input-group col-sm-12" style="margin-top:10px">
+                      <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
+                      <div class="input-group-btn"> 
+                        <button class="btn btn-danger remove" type="button">Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="card-footer ml-auto mr-auto">
@@ -388,13 +408,51 @@
 <script src="/material/datepicker/datepicker.js"></script>
 
 <script type="text/javascript">
+    <?php
+        echo "const content_images = ". json_encode(json_decode($blacklist->content_files)) . ";\n";
+    ?>
+    let remainImageIndexs = [];
+    
     $(document).ready(function() {
+      
+      if (content_images) {
+            let image_html = "";
+            let i = 0;
+            content_images.forEach(function(element) {
+
+              image_html += '<div class="col-sm-3">';
+              image_html += '<img src="/uploads/blacklist_contents/' + element + '" class="d-block content-holder">';
+              image_html += '<img class="cancel-image" src="/material/img/cancel.png" style="display:none" id="cancel_image_' + i + '">';
+              image_html += '<div class="row justify-content-center input-group-btn">';
+              image_html += '<button class="btn btn-success" onclick="addImage(' + i + ')" type="button">Add</button>';
+              image_html += '<button class="btn btn-danger" onclick="removeImage(' + i + ')" type="button">Remove</button>';
+              image_html += '</div>';
+              image_html += '</div>';
+              remainImageIndexs.push(i);
+
+              i++;
+            });
+            $('#image_div').html(image_html);
+            $('#image_names').val(content_images);
+      }
+
       $('#avatar_image').click(function() {
         $('#avatar').click();
       });
       $('[data-toggle="datepicker"]').datepicker({
         format:'yyyy-mm-dd'
       });
+
+      
+      $(".increment .btn-success").click(function(){ 
+          var html = $(".clone").html();
+          $(".increment").after(html);
+      });
+
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+
     });
 
     function createObjectURL(object) {
@@ -409,6 +467,32 @@
             window.URL.revokeObjectURL(this.src);
         }
 
+    }
+    function addImage(i) {
+      if (!remainImageIndexs.includes(i)) {
+        remainImageIndexs.push(i);
+      }
+      $('#cancel_image_'+i).hide();
+      let images = [];
+      remainImageIndexs.forEach(function(element) {
+        images.push(content_images[element]);
+      });
+      $('#image_names').val(images);
+      console.log(images);
+    }
+
+    function removeImage(i) {
+      var index = remainImageIndexs.indexOf(i);
+      if (index > -1) {
+        remainImageIndexs.splice(index, 1);
+      }
+      $('#cancel_image_'+i).show();
+      let images = [];
+      remainImageIndexs.forEach(function(element) {
+        images.push(content_images[element]);
+      });
+      $('#image_names').val(images);
+      console.log(images);
     }
 </script>
 @endpush

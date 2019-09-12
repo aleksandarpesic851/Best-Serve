@@ -127,18 +127,23 @@
                   ]
         });
 
-      $('body').on('click', '#delete_item', function () {
-  
+    $('#blacklist_datatable tbody').on( 'click', 'tr', function (event) {
+      if (event.target.className == "material-icons")
+        return;
+      document.location.href = "/blacklist/showdata/" + table.row(this).data().id;
+    });
+    
+    $('body').on('click', '#delete_item', function (event) {
+        event.stopPropagation();
         const list_id = $(this).data("id");
         const token = $("meta[name='csrf-token']").attr("content");
         if (!confirm("Are You sure want to delete !"))
-          return;
+          return false;
 
         $.ajax({
-            type: "DELETE",
-            url: "/blacklist/"+list_id,
+            type: "GET",
+            url: "/blacklist/delet/"+list_id,
             data: {
-              "id": list_id,
               "_token": token,
             },
             success: function (data) {
@@ -149,20 +154,19 @@
                 console.log('Error:', data);
             }
         });
+        return false;
     });
 
-    $('body').on('click', '#edit_item', function () {
+    $('body').on('click', '#edit_item', function (event) {
+      event.stopPropagation();
       const list_id = $(this).data("id");
       document.location.href = "/blacklist/" + list_id + "/edit";
+      return false;
     });
 
     $('[data-toggle="datepicker"]').datepicker();
     $('.form-control').change(function() {
       table.draw(false);
-    });
-
-    $('#blacklist_datatable tbody').on( 'click', 'tr', function () {
-      document.location.href = "/blacklist/showdata/" + table.row(this).data().id;
     });
 
   });   
