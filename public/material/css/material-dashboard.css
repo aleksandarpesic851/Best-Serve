@@ -1856,7 +1856,7 @@ pre code {
 
 .table {
   width: 100%;
-  max-width: 100%;
+  /* max-width: 100%; */
   margin-bottom: 1rem;
   background-color: transparent;
 }
@@ -14467,7 +14467,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .wrapper {
   position: relative;
   top: 0;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .sidebar {
@@ -16329,9 +16329,9 @@ a .material-icons {
 
 .form-check,
 label {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857;
-  color: #AAAAAA;
+  color: #999999;
   font-weight: 400;
 }
 
@@ -18885,9 +18885,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .search_form span {
-  width: 20%;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
 }
 
 .blocker {
@@ -18899,6 +18897,7 @@ Copyright (c) 2015 Daniel Eden
   font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
   font-weight: 300 !important;
   border-bottom: 1px solid #aaa;
+  margin: 0px !important;
 }
 
 .padding5 {
@@ -18909,6 +18908,7 @@ Copyright (c) 2015 Daniel Eden
 .padding5 .btn {
   padding: 10px !important;
 }
+
 tr {
   cursor: pointer
 }
@@ -18939,12 +18939,79 @@ tr:hover {
   position: relative;
   display: block;
   margin:auto;
-  height: 20vw;
+  max-height: 30vh;
+  max-width: 100%;
 }
 
 .slider-image {
-  height: 40vw;
+  max-height: 60vh;
   margin:auto;
+}
+
+svg.ct-chart-bar, svg.ct-chart-line{
+	overflow: visible;
+}
+
+.ct-label.ct-label.ct-horizontal.ct-end {
+  position: relative;
+  justify-content: flex-end;
+  text-align: right;
+  transform-origin: 100% 0;
+  transform: translate(-100%) rotate(-45deg);
+  white-space:nowrap;
+}
+
+.td-wide {
+  min-width: 300px;
+}
+
+.td-middle {
+  min-width: 100px;
+}
+
+/* @media (max-aspect-ratio: 16/9) {
+  #videoBG { 
+      width:auto;
+      height: 100%;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%
+  }
+} */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+      background: center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    background: center center / cover no-repeat;
+  }
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */

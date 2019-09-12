@@ -360,7 +360,7 @@ md = {
           right: 0,
           bottom: 0,
           left: 0
-        }
+        },
       }
 
       var blackChart = new Chartist.Line('#blackChart', blackData, optionsBlackChart);

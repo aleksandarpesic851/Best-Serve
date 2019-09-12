@@ -9,17 +9,42 @@
           <div class="card-header card-header-primary" >
             <h3 class="card-title">Search</h3>
             <div class="row search_form" id="search_form" style="display:none">
-              <input class="col-sm-12 form-control" placeholder="Full Name" type="text" name="full_name" id="full_name">
-              <input class="col-sm-12 form-control" data-toggle="datepicker" placeholder="Birthday" type="text" name="birthday" id="birthday">
-              <input class="col-sm-12 form-control" placeholder="Business" type="text" name="business" id="business">
-              <input class="col-sm-12 form-control" placeholder="Nationality" type="text" name="nationality" id="nationality">
-              <input class="col-sm-12 form-control" placeholder="National Id Card Number" type="text" name="national_id_card_no" id="national_id_card_no">
-              <input class="col-sm-12 form-control" placeholder="Social Security Number" type="text" name="social_security_no" id="social_security_no">
-              <input class="col-sm-12 form-control" placeholder="Country Residence" type="text" name="country_residence" id="country_residence">
-              <input class="col-sm-12 form-control" placeholder="Zip/Postal Code" type="text" name="zip_code" id="zip_code">
-              <input class="col-sm-12 form-control" placeholder="Content" type="text" name="content" id="content">
-              <input class="form-control" data-toggle="datepicker" type="text" name="start_date" id="start_date" placeholder="Please select start date"> 
-              <input class="form-control" data-toggle="datepicker" type="text" name="end_date" id="end_date" placeholder="Please select start date"> 
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Full Name" type="text" name="full_name" id="full_name">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Full Name" type="text" name="full_name" id="full_name">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" data-toggle="datepicker" placeholder="Birthday" type="text" name="birthday" id="birthday">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Business" type="text" name="business" id="business">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Nationality" type="text" name="nationality" id="nationality">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="National Id Card Number" type="text" name="national_id_card_no" id="national_id_card_no">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Social Security Number" type="text" name="social_security_no" id="social_security_no">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Country Residence" type="text" name="country_residence" id="country_residence">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Zip/Postal Code" type="text" name="zip_code" id="zip_code">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" placeholder="Content" type="text" name="content" id="content">
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" data-toggle="datepicker" type="text" name="start_date" id="start_date" placeholder="Please select start date"> 
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
+                <input class="form-control" data-toggle="datepicker" type="text" name="end_date" id="end_date" placeholder="Please select start date"> 
+              </div>
             </div>
           </div>
 
@@ -50,15 +75,15 @@
                     <th>Id</th>
                     <th>No</th>
                     <th>Photo</th>
-                    <th>Full Name</th>
-                    <th>Birthday</th>
-                    <th>Business</th>
-                    <th>Nationality</th>
-                    <th>Id Card</th>
-                    <th>Social No</th>
-                    <th>Country Residence</th>
-                    <th>Zip Code</th>
-                    <th>Content</th>
+                    <th class="td-middle">Full Name</th>
+                    <th class="td-middle">Birthday</th>
+                    <th class="td-middle">Business</th>
+                    <th class="td-middle">Nationality</th>
+                    <th class="td-middle">Id Card</th>
+                    <th class="td-middle">Social No</th>
+                    <th class="td-middle">Country Residence</th>
+                    <th class="td-middle">Zip Code</th>
+                    <th class="td-wide">Content</th>
                     <th>Action</th>
                   </tr>
               </thead>
@@ -90,6 +115,7 @@
             processing: true,
             serverSide: true,
             searching: false,
+            scrollX: true,
             language: {
               "emptyTable": "WE CANNOT FIND THE INFORMATION PROVIDED, TRY SEARCHING WITH ANOTHER FIELD"
             },

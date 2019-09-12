@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="content">
-    <div class="container-fluid">
+    
       <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -38,7 +38,7 @@
                         {{ __('Email') }}
                       </th>
                       <th>
-                        {{ __('Creation date') }}
+                        {{ __('Create Date') }}
                       </th>
                       <th class="text-right">
                         {{ __('Actions') }}
@@ -87,6 +87,6 @@
             </div>
         </div>
       </div>
-    </div>
+    
   </div>
 @endsection

@@ -17,7 +17,7 @@
               <div class="card-body ">
                 @if (session('status'))
                   <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-12">
                       <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <i class="material-icons">close</i>
@@ -28,17 +28,17 @@
                   </div>
                 @endif
                 <div class="row">
-                  <div class="col-sm-4">
+                  <div class="col-12 col-md-4">
                     <div class="row " style=" min-height: 100%; align-items: center;">
                       <img class="avatar-image" id="avatar_image" src="/uploads/avatars/{{ old('avatar', auth()->user()->avatar) }}">
                     </div>
                     <input id="avatar" type="file" name="avatar" style="display: none" onchange="updateAvatarImage(this)">
                   </div>
 
-                  <div class="col-sm-8">
+                  <div class="col-12 col-md-8">
                     <div class="row">
-                      <label class="col-sm-2 col-form-label">{{ __('Name') }}</label>
-                      <div class="col-sm-7">
+                      <label class="col-4 col-md-2 col-form-label">{{ __('Name') }}</label>
+                      <div class="col-8 col-md-7">
                         <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}" required="true" aria-required="true"/>
                           @if ($errors->has('name'))
@@ -49,8 +49,8 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-2 col-form-label">{{ __('ID') }}</label>
-                      <div class="col-sm-7">
+                      <label class="col-4 col-md-2 col-form-label">{{ __('ID') }}</label>
+                      <div class="col-8 col-md-7">
                         <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="text" placeholder="{{ __('ID') }}" value="{{ old('email', auth()->user()->email) }}" required />
                           @if ($errors->has('email'))
@@ -61,8 +61,8 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-2 col-form-label">{{ __('Company') }}</label>
-                      <div class="col-sm-7">
+                      <label class="col-4 col-md-2 col-form-label">{{ __('Company') }}</label>
+                      <div class="col-8 col-md-7">
                         <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('Company') }}" value="{{ old('company', auth()->user()->company) }}" required />
                           @if ($errors->has('company'))
@@ -73,8 +73,8 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-2 col-form-label">{{ __('Contact') }}</label>
-                      <div class="col-sm-7">
+                      <label class="col-4 col-md-2 col-form-label">{{ __('Contact') }}</label>
+                      <div class="col-8 col-md-7">
                         <div class="form-group{{ $errors->has('contact') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" id="input-contact" type="contact" placeholder="{{ __('Contact') }}" value="{{ old('contact', auth()->user()->contact) }}" />
                           @if ($errors->has('contact'))
@@ -109,7 +109,7 @@
               <div class="card-body ">
                 @if (session('status_password'))
                   <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-12">
                       <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <i class="material-icons">close</i>
@@ -120,8 +120,8 @@
                   </div>
                 @endif
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="input-current-password">{{ __('Current Password') }}</label>
-                  <div class="col-sm-7">
+                  <label class="col-4 col-md-2 col-form-label" for="input-current-password">{{ __('Current Password') }}</label>
+                  <div class="col-8 col-md-7">
                     <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('old_password') ? ' is-invalid' : '' }}" input type="password" name="old_password" id="input-current-password" placeholder="{{ __('Current Password') }}" value="" required />
                       @if ($errors->has('old_password'))
@@ -131,8 +131,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="input-password">{{ __('New Password') }}</label>
-                  <div class="col-sm-7">
+                  <label class="col-4 col-md-2 col-form-label" for="input-password">{{ __('New Password') }}</label>
+                  <div class="col-8 col-md-7">
                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="input-password" type="password" placeholder="{{ __('New Password') }}" value="" required />
                       @if ($errors->has('password'))
@@ -142,8 +142,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="input-password-confirmation">{{ __('Confirm New Password') }}</label>
-                  <div class="col-sm-7">
+                  <label class="col-4 col-md-2 col-form-label" for="input-password-confirmation">{{ __('Confirm New Password') }}</label>
+                  <div class="col-8 col-md-7">
                     <div class="form-group">
                       <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('Confirm New Password') }}" value="" required />
                     </div>

@@ -49,7 +49,7 @@
                 <th>Photo</th>
                 <th>Name</th>
                 <th>Country</th>
-                <th>Content</th>
+                <th class="text-center">Content</th>
               </thead>
               <tbody>
               <?php $i = 0;?>
@@ -64,7 +64,7 @@
                   @endif
                   <td>{{$blacklist->full_name}}</td>
                   <td>{{$blacklist->country_residence}}</td>
-                  <td>{{$blacklist->content}}</td>
+                  <td class="td-wide">{{$blacklist->content}}</td>
                 </tr>
               @endforeach
               </tbody>
