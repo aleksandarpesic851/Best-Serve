@@ -349,6 +349,18 @@
                         </div>
                       </div>
 
+                      <div class="row">
+                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('Accomplice') }}</label>
+                        <div class="col-sm-8 col-md-9">
+                          <div class="form-group{{ $errors->has('accomplice') ? ' has-danger' : '' }}">
+                            <input class="form-control{{ $errors->has('accomplice') ? ' is-invalid' : '' }}" value="{{ old('accomplice', $blacklist->accomplice) }}" name="accomplice" id="input-accomplice" type="text" placeholder="{{ __('Accomplice') }}" value="{{ old('accomplice') }}" />
+                            @if ($errors->has('accomplice'))
+                              <span id="accomplice-error" class="error text-danger" for="input-accomplice">{{ $errors->first('accomplice') }}</span>
+                            @endif
+                          </div>
+                        </div>
+                      </div>
+
                   </div>
                 </div>
 

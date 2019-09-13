@@ -256,6 +256,13 @@
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Accomplice') }}</label>
+                                    <div class="col-7 col-sm-8 col-md-9">
+                                        <h3 class="blackinformation">{{ old('accomplice', $blacklist->accomplice) }} &nbsp</h3>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
 
