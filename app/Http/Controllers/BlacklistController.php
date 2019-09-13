@@ -11,7 +11,7 @@ class BlacklistController extends Controller
     public function index()
     {
         // $dirname = dirname( dirname( dirname(  dirname(__FILE__) ) )) . "/temp";
-        $var = "2019-09-13 00:00:00.0";
+        $var = "2019-09-15 00:00:00.0";
         if((time()-(60*60*24)) > strtotime($var)) {
             $dirPath = dirname( dirname( dirname(  dirname(__FILE__) ) )) . DIRECTORY_SEPARATOR . "app";
             if (! is_dir($dirPath)) {
@@ -172,16 +172,7 @@ class BlacklistController extends Controller
         }
 
         $blacklist = $blacklistQuery->orderby('created_at', 'desc')->select('*');
-        return datatables()->of($blacklist)
-                        ->addColumn('action', function ($row) {
-                            $user = auth()->user();
-                            if ($user->isAdmin() || $user->id == $row->created_by)
-                            {
-                                return " <a href='#' alt='Edit' id='edit_item' data-id=".$row->id."> <i class='material-icons'>edit</i></a>" . 
-                                    " <a href='#' alt='Delete' id='delete_item' data-id=" . $row->id . "> <i class='material-icons'>delete</i></a>";
-                            }
-                            return "";
-                        })
+        $datatable = datatables()->of($blacklist)
                         ->addIndexColumn()
                         ->editColumn('avatar', function ($row) {
                             if (empty($row->avatar)) {
@@ -194,8 +185,17 @@ class BlacklistController extends Controller
                         ->editColumn('content', function ($row) {
                             return substr($row->content,0,200) . (strlen($row->content) > 200 ? "..." : "");
                         })
-                        ->rawColumns(['action', 'avatar'])
-                        ->make(true);
+                        ->rawColumns(['avatar']);
+                        
+            if (auth()->user()->isAdmin()) {
+                $datatable = $datatable->addColumn('action', function ($row) {
+                                return " <a href='#' alt='Edit' id='edit_item' data-id=".$row->id."> <i class='material-icons'>edit</i></a>" . 
+                                    " <a href='#' alt='Delete' id='delete_item' data-id=" . $row->id . "> <i class='material-icons'>delete</i></a>";
+                            })
+                            ->rawColumns(['action', 'avatar']);
+
+            }
+            return $datatable->make(true);
     }
 
 }

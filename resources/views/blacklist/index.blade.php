@@ -84,7 +84,9 @@
                     <th class="td-middle">Country Residence</th>
                     <th class="td-middle">Zip Code</th>
                     <th class="td-wide">Content</th>
+                    @if (auth()->user()->isAdmin())
                     <th>Action</th>
+                    @endif
                   </tr>
               </thead>
             </table>
@@ -149,7 +151,9 @@
                       { data: 'country_residence', name: 'country_residence' },
                       { data: 'zip_code', name: 'zip_code' },
                       { data: 'content', name: 'content' },
+                      @if (auth()->user()->isAdmin())
                       {data: 'action', name: 'action', orderable: false},
+                      @endif
                   ]
         });
 
