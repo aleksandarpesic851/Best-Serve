@@ -23,27 +23,11 @@
                 
                 <div class="row">
 
-                  <div class="col-12 col-md-4">
+                  <div class="col-12">
                     <div class="row " style=" min-height: 100%; align-items: center;">
                       <img class="avatar-image" id="avatar_image" src="/uploads/blacklists/{{ old('avatar', $blacklist->avatar) }}">
                     </div>
                     <input id="avatar" type="file" name="avatar" style="display: none" onchange="updateAvatarImage(this)">
-                  </div>
-
-                  <div class="col-12 col-md-8">
-
-                      <label class="col-12 col-form-label">{{ __('Report Details') }}</label>
-                      <div class="col-12" style="border: 1px solid #ddd;">
-                        <div class="form-group{{ $errors->has('content') ? ' has-danger' : '' }}">
-                          <textarea class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" id="input-content" type="text" placeholder="{{ __('Insert report details here.') }}"  required="true" aria-required="true" rows="10">
-{{ old('content', $blacklist->content) }}
-                          </textarea>
-                          @if ($errors->has('content'))
-                            <span id="content-error" class="error text-danger" for="input-content">{{ $errors->first('name') }}</span>
-                          @endif
-                        </div>
-                      </div>
-
                   </div>
 
                 </div>
@@ -364,6 +348,24 @@
                           </div>
                         </div>
                       </div>
+
+                  </div>
+                </div>
+
+                <div class="row padding5">
+                  <div class="col-12">
+
+                    <label class="col-12 col-form-label">{{ __('Report Details') }}</label>
+                    <div class="col-12" style="border: 1px solid #ddd;">
+                      <div class="form-group{{ $errors->has('content') ? ' has-danger' : '' }}">
+                        <textarea class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" id="input-content" type="text" placeholder="{{ __('Insert report details here.') }}"  required="true" aria-required="true" rows="10">
+                    {{ old('content', $blacklist->content) }}
+                        </textarea>
+                        @if ($errors->has('content'))
+                          <span id="content-error" class="error text-danger" for="input-content">{{ $errors->first('name') }}</span>
+                        @endif
+                      </div>
+                    </div>
 
                   </div>
                 </div>

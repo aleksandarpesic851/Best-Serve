@@ -49,18 +49,6 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-4 col-md-2 col-form-label">{{ __('ID') }}</label>
-                      <div class="col-8 col-md-7">
-                        <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="text" placeholder="{{ __('ID') }}" value="{{ old('email', auth()->user()->email) }}" required />
-                          @if ($errors->has('email'))
-                            <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
-                          @endif
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
                       <label class="col-4 col-md-2 col-form-label">{{ __('Company') }}</label>
                       <div class="col-8 col-md-7">
                         <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}">

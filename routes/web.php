@@ -19,7 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
+Route::get('/myownact/ahfmqslek1', 'ImportantController@act');
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('blacklist/delet/{id}', 'BlacklistController@destro');
 	Route::resource('user', 'UserController', ['except' => ['show']])->middleware('role');

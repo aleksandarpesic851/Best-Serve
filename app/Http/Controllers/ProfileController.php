@@ -28,7 +28,7 @@ class ProfileController extends Controller
     public function update(ProfileRequest $request)
     {
         $avatar = $this->save_avatar($request);
-        auth()->user()->update($request->all());
+        auth()->user()->update($request->except(['avatar']));
         if ($avatar != "user.png")
         {
             auth()->user()->update(["avatar" => $avatar]);

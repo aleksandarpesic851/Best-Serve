@@ -17,24 +17,18 @@
                                 <a href="{{ route('blacklist.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
                             </div>
                         </div>
-                            
+
                         <div class="row">
                             <div class="col-12 col-lg-4 offset-lg-1">
                                 <div class="row ">
                                     <div class="col-sm-12"  style="min-height: 100%; align-items: center; text-align: center">
                                         <img class="avatar-image" id="avatar_image" src="/uploads/blacklists/{{ old('avatar', $blacklist->avatar) }}">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <label class="col-sm-12 col-form-label">{{ __('Report Contents') }}</label>
-                                        <div class="col-sm-12">
-                                            <h5>{{ old('content', $blacklist->content) }}</h5>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             
                             <div class="col-12 col-lg-6">
-                                <div style="align-items: center; border: 1px solid #ddd">
+                                <div style="align-items: center;">
                                     <div id="content-images" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner" id="carousel-content">
                                             <div style="align-items: center;">
@@ -52,6 +46,9 @@
                                             </a>
                                         </div>
                                     </div>   
+                                    <div style="text-align: center">
+                                        <button  class="btn btn-danger" id="btn-close" type="button" style="display: none" onclick="showSmallImage()">Small</button>
+                                    </div>
                                 </div>                             
                             </div>
                         </div>
@@ -63,98 +60,98 @@
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Full Name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }}</h3>
+                                        <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }} &nbsp</h3>
                                     </div>
                                 </div>
  
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Birthday') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('birthday', $blacklist->birthday) }}</h3>
+                                        <h3 class="blackinformation">{{ old('birthday', $blacklist->birthday) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('National Id Card Number') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('national_id_card_no', $blacklist->national_id_card_no) }}</h3>
+                                        <h3 class="blackinformation">{{ old('national_id_card_no', $blacklist->national_id_card_no) }}&nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Zip Code') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('zip_code', $blacklist->zip_code) }}</h3>
+                                        <h3 class="blackinformation">{{ old('zip_code', $blacklist->zip_code) }}&nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Full Name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }}</h3>
+                                        <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('First Name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('firstname', $blacklist->firstname) }}</h3>
+                                        <h3 class="blackinformation">{{ old('firstname', $blacklist->firstname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Maiden Name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('maidenname', $blacklist->maidenname) }}</h3>
+                                        <h3 class="blackinformation">{{ old('maidenname', $blacklist->maidenname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Country of Birth') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('country_birth', $blacklist->country_birth) }}</h3>
+                                        <h3 class="blackinformation">{{ old('country_birth', $blacklist->country_birth) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Color of Eye') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('color_eye', $blacklist->color_eye) }}</h3>
+                                        <h3 class="blackinformation">{{ old('color_eye', $blacklist->color_eye) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Visible Peculiarity') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('visible_peculiarity', $blacklist->visible_peculiarity) }}</h3>
+                                        <h3 class="blackinformation">{{ old('visible_peculiarity', $blacklist->visible_peculiarity) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Profession') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('profession', $blacklist->profession) }}</h3>
+                                        <h3 class="blackinformation">{{ old('profession', $blacklist->profession) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surburb') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('surburb', $blacklist->surburb) }}</h3>
+                                        <h3 class="blackinformation">{{ old('surburb', $blacklist->surburb) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Telephone Number') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('telephone_no', $blacklist->telephone_no) }}</h3>
+                                        <h3 class="blackinformation">{{ old('telephone_no', $blacklist->telephone_no) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Phone Number') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('phone_no', $blacklist->phone_no) }}</h3>
+                                        <h3 class="blackinformation">{{ old('phone_no', $blacklist->phone_no) }} &nbsp</h3>
                                     </div>
                                 </div>
 
@@ -164,101 +161,111 @@
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Business') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('business', $blacklist->business) }}</h3>
+                                        <h3 class="blackinformation">{{ old('business', $blacklist->business) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Nationality') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('nationality', $blacklist->nationality) }}</h3>
+                                        <h3 class="blackinformation">{{ old('nationality', $blacklist->nationality) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Social Security Number') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('social_security_no', $blacklist->social_security_no) }}</h3>
+                                        <h3 class="blackinformation">{{ old('social_security_no', $blacklist->social_security_no) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Country Residence') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('country_residence', $blacklist->country_residence) }}</h3>
+                                        <h3 class="blackinformation">{{ old('country_residence', $blacklist->country_residence) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surname') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }}</h3>
+                                        <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surname') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }}</h3>
+                                        <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Other Name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('othername', $blacklist->othername) }}</h3>
+                                        <h3 class="blackinformation">{{ old('othername', $blacklist->othername) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('City of Birth') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('city_birth', $blacklist->city_birth) }}</h3>
+                                        <h3 class="blackinformation">{{ old('city_birth', $blacklist->city_birth) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Height') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('height', $blacklist->height) }}</h3>
+                                        <h3 class="blackinformation">{{ old('height', $blacklist->height) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Color of Hair') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('color_hair', $blacklist->color_hair) }}</h3>
+                                        <h3 class="blackinformation">{{ old('color_hair', $blacklist->color_hair) }} &nbsp</h3>
                                     </div>
                                 </div>
                                 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Marital Status') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('marital_status', $blacklist->marital_status) }}</h3>
+                                        <h3 class="blackinformation">{{ old('marital_status', $blacklist->marital_status) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('City Residence') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('city_residence', $blacklist->city_residence) }}</h3>
+                                        <h3 class="blackinformation">{{ old('city_residence', $blacklist->city_residence) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Postal Address') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('postal_address', $blacklist->postal_address) }}</h3>
+                                        <h3 class="blackinformation">{{ old('postal_address', $blacklist->postal_address) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Email') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('email', $blacklist->email) }}</h3>
+                                        <h3 class="blackinformation">{{ old('email', $blacklist->email) }} &nbsp</h3>
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row padding5">
+                            <div class="col-12">
+                                <label class="col-12 col-form-label">{{ __('Report Contents') }}</label>
+                                <div class="col-12">
+                                    <h5>{{ old('content', $blacklist->content) }}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -291,7 +298,20 @@
             });
             $('#carousel-content').html(carousel_html);
             $('#carousel-controler').show();
+            $('#content-images').on('click', function() {
+                $('#content-images img').removeClass('slider-image');
+                $('#content-images img').removeClass('img-fluid');
+                $('#content-images img').addClass('img-fullscreen');
+                $('#btn-close').show();
+            })
         }
     });
+
+    function showSmallImage() {
+        $('#content-images img').addClass('slider-image');
+        $('#content-images img').addClass('img-fluid');
+        $('#content-images img').removeClass('img-fullscreen');
+        $('#btn-close').hide();
+    }
 </script>
 @endpush

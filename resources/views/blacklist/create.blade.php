@@ -20,26 +20,20 @@
                       <a href="{{ route('blacklist.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
-                
+                <br>
+                <div class="row">
+                  <div class="col-10 offset-1" style="border: 1px solid #d88">
+                  In this section you can create a new profile of the person or client who abused of your services. At the bottom of this section you can find a button where you can upload images as "photos, proofs, evidence or related documents" Please be careful of the information that you post because you cannot modify it later. If you wish to change, delete or modify anything then you must contact us.
+                  </div>
+                </div>
+                <br>
                 <div class="row">
 
-                  <div class="col-12 col-md-4">
+                  <div class="col-12">
                     <div class="row " style=" min-height: 100%; align-items: center;">
                       <img class="avatar-image" id="avatar_image" src="/uploads/avatars/user.png">
                     </div>
                     <input id="avatar" type="file" name="avatar" style="display: none" onchange="updateAvatarImage(this)" accept="image/*">
-                  </div>
-
-                  <div class="col-12 col-md-8">
-                    <label class="col-sm-12 col-form-label">{{ __('INSERT REPORT DETAILS HERE for HERE YOU CAN EXPLAIN THE SITUATION OR THE ACTIONS OF YOUR CLIENT') }}</label>
-                    <div class="col-sm-12" style="border: 1px solid #ddd;">
-                      <div class="form-group{{ $errors->has('content') ? ' has-danger' : '' }}">
-                        <textarea class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" id="input-content" type="text" placeholder="{{ __('Insert report details here.') }}" value="{{ old('content') }}" required="true" aria-required="true" rows="10"></textarea>
-                        @if ($errors->has('content'))
-                          <span id="content-error" class="error text-danger" for="input-content">{{ $errors->first('name') }}</span>
-                        @endif
-                      </div>
-                    </div>
                   </div>
 
                 </div>
@@ -363,6 +357,20 @@
                   </div>
                 </div>
 
+                <div class="row padding5">
+                  <div class="col-12">
+                    <label class="col-sm-12 col-form-label">{{ __('HERE YOU CAN EXPLAIN THE SITUATION OR THE ACTIONS OF YOUR CLIENT') }}</label>
+                    <div class="col-sm-12" style="border: 1px solid #ddd;">
+                      <div class="form-group{{ $errors->has('content') ? ' has-danger' : '' }}">
+                        <textarea class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" id="input-content" type="text" placeholder="{{ __('Insert report details here.') }}" value="{{ old('content') }}" required="true" aria-required="true" rows="10"></textarea>
+                        @if ($errors->has('content'))
+                          <span id="content-error" class="error text-danger" for="input-content">{{ $errors->first('name') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div class="row padding5">
                   <div class="input-group control-group increment col-sm-12">
                     <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
