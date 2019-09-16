@@ -32,10 +32,10 @@ class HomeController extends Controller
 
         for($i = 0 ; $i < 8 ; $i++) 
         {
-            $dateVal[] = date('Y-m-d',strtotime("-" . (7-$i) . " months"));
+            $dateVal[] = date('Y-m-d',strtotime("-" . (6-$i) . " months"));
             $userVal[] = User::where('created_at', "<=", $dateVal[$i])->get()->count();
             $blackVal[] = Blacklist::where('created_at', "<=", $dateVal[$i])->get()->count();
-            $dateVal[$i] = date('Y-m',strtotime("-" . (7-$i) . " months"));
+            $dateVal[$i] = date('Y-m',strtotime("-" . (6-$i) . " months"));
         }
         
         foreach($blacklists as $blacklist) {
