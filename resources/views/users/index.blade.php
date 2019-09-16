@@ -35,7 +35,7 @@
                           {{ __('messages.name') }}
                       </th>
                       <th>
-                        {{ __('messages.email') }}
+                        {{ __('messages.id') }}
                       </th>
                       <th>
                         {{ __('messages.create_date') }}

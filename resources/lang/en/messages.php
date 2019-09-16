@@ -106,6 +106,8 @@ return [
     'id_card' => 'Id Card',
     'social_no' => 'Social No',
     'empty_table' => 'WE CANNOT FIND THE INFORMATION PROVIDED, TRY SEARCHING WITH ANOTHER FIELD',
+    'search_national_id' => 'National Id Card Number',
+    'search_residence' => 'Country Residence',
     //blacklist edit
     'update_report' => 'Update Report',
     'short_report_detail' => 'Report Details',

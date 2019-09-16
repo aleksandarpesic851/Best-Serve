@@ -22,13 +22,13 @@
                 <input class="form-control" placeholder="{{ __('messages.nationality') }}" type="text" name="nationality" id="nationality">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="{{ __('messages.national_id_card')}}" type="text" name="national_id_card_no" id="national_id_card_no">
+                <input class="form-control" placeholder="{{ __('messages.search_national_id')}}" type="text" name="national_id_card_no" id="national_id_card_no">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
                 <input class="form-control" placeholder="{{ __('messages.social_security')}}" type="text" name="social_security_no" id="social_security_no">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="{{ __('messages.country_residence') }}" type="text" name="country_residence" id="country_residence">
+                <input class="form-control" placeholder="{{ __('messages.search_residence') }}" type="text" name="country_residence" id="country_residence">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
                 <input class="form-control" placeholder="{{ __('messages.zip_code') }}" type="text" name="zip_code" id="zip_code">
@@ -78,7 +78,7 @@
                     <th class="td-middle">{{ __('messages.nationality') }}</th>
                     <th class="td-middle">{{ __('messages.id_card') }}</th>
                     <th class="td-middle">{{ __('messages.social_no') }}</th>
-                    <th class="td-middle">{{ __('messages.country_residence') }}</th>
+                    <th class="td-middle">{{ __('messages.search_residence') }}</th>
                     <th class="td-middle">{{ __('messages.zip_code')}}</th>
                     <th class="td-wide">{{ __('messages.content') }}</th>
                     @if (auth()->user()->isAdmin())

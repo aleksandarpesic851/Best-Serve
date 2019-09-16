@@ -262,7 +262,7 @@
                         <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.other_name') }}</label>
                         <div class="col-sm-8 col-md-9">
                           <div class="form-group{{ $errors->has('othername') ? ' has-danger' : '' }}">
-                            <input class="form-control{{ $errors->has('othername') ? ' is-invalid' : '' }}" name="othername" id="input-othername" type="text" placeholder="{{ __('othername') }}" value="{{ old('messages.other_name') }}" />
+                            <input class="form-control{{ $errors->has('othername') ? ' is-invalid' : '' }}" name="othername" id="input-othername" type="text" placeholder="{{ __('messages.other_name') }}" value="{{ old('messages.other_name') }}" />
                             @if ($errors->has('othername'))
                               <span id="othername-error" class="error text-danger" for="input-othername">{{ $errors->first('othername') }}</span>
                             @endif
