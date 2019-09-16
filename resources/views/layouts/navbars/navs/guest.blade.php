@@ -5,9 +5,8 @@
     <div class="navbar-wrapper">
 
       <div class="logo">
-        <a href="/" class="navbar-brand">
+        <a href="/home" class="navbar-brand">
           <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
-          {{ __('Best Service') }}
         </a>
       </div>
     </div>
@@ -20,18 +19,8 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="{{ route('home') }}" class="nav-link">
-            <i class="material-icons">dashboard</i> {{ __('Dashboard') }}
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a href="{{ route('profile.edit') }}" class="nav-link">
-            <i class="material-icons">face</i> {{ __('Profile') }}
-          </a>
-        </li>
-        <li class="nav-item{{ $activePage == 'blacklist' ? ' active' : '' }}">
-          <a href="/blacklist" class="nav-link">
-            <i class="material-icons">content_paste</i> {{ __('Blacklists') }}
+          <a href="/contact" class="nav-link">
+            <i class="material-icons">contacts</i> {{ __('Contact Us') }}
           </a>
         </li>
         @guest()

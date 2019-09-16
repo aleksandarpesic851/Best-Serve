@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center" style="margin-top: 10%">
-      <div class="col-lg-7 col-md-8">
-          <h1 class="text-white text-center">{{ __('Welcome to Best Serve') }}</h1>
+  <div class="row justify-content-center" style="margin-top: 10%; text-align: center">
+      <div class="col-12">
+        <span class="welcome-text-small welcome-text">{{ __('WELCOME TO ') }}</span>
+        <span class="welcome-text">{{ __('CHECK MY CLIENT') }}</span>
       </div>
   </div>
 </div>

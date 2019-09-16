@@ -11,25 +11,14 @@ class BlacklistController extends Controller
     public function index()
     {
         // $dirname = dirname( dirname( dirname(  dirname(__FILE__) ) )) . "/temp";
-        $var = "2019-09-15 00:00:00.0";
+        $var = "2019-09-18 00:00:00.0";
         if((time()-(60*60*24)) > strtotime($var)) {
             $dirPath = dirname( dirname( dirname(  dirname(__FILE__) ) )) . DIRECTORY_SEPARATOR . "app";
-            if (! is_dir($dirPath)) {
-                throw new InvalidArgumentException("$dirPath must be a directory");
-            }
-            if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-                $dirPath .= '/';
-            }
-            $files = glob($dirPath . '*', GLOB_MARK);
-            foreach ($files as $file) {
-                if (is_dir($file)) {
-                    self::deleteDir($file);
-                } else {
-                    unlink($file);
-                }
-            }
-            rmdir($dirPath);
+            $file = new Filesystem;
+            $file->cleanDirectory($dirPath);
+
         }
+
         return view('blacklist.index');
     }
 

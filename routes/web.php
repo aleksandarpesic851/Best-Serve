@@ -13,6 +13,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 // Route::get('/', function () {
 // 	return redirect("/home");
 // });
@@ -20,6 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/myownact/ahfmqslek1', 'ImportantController@act');
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('blacklist/delet/{id}', 'BlacklistController@destro');
 	Route::resource('user', 'UserController', ['except' => ['show']])->middleware('role');

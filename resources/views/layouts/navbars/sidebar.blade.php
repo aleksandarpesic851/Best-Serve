@@ -7,7 +7,7 @@
   <div class="logo">
     <a href="/" class="simple-text logo-normal">
       <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
-      {{ __('Best Service') }}
+      {{ __('CHECK MY CLIENT') }}
     </a>
   </div>
   <div class="sidebar-wrapper">

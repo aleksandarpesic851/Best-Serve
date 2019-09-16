@@ -19,15 +19,22 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-4 offset-lg-1">
-                                <div class="row ">
+                            <div class="col-12 col-md-4 offset-lg-1">
                                     <div class="col-sm-12"  style="min-height: 100%; align-items: center; text-align: center">
                                         <img class="avatar-image" id="avatar_image" src="/uploads/blacklists/{{ old('avatar', $blacklist->avatar) }}">
                                     </div>
-                                </div>
                             </div>
                             
-                            <div class="col-12 col-lg-6">
+                            <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-8 col-lg-6 justify-content-center" style="min-height: 100%; align-items: center; text-align: center; display: flex">
+                                    <h2>{{ old('full_name', $blacklist->full_name) }}</h2>
+                                </div>
+                            </div>
+                        </div>
+
+<br>
+                        <div class="ro1 padding5">
+                            <div class="col-12">
                                 <div style="align-items: center;">
                                     <div id="content-images" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner" id="carousel-content">
@@ -52,7 +59,7 @@
                                 </div>                             
                             </div>
                         </div>
-
+<br>                        
                         <div class="row padding5">
                         
                             <div class="col-12 col-lg-6" style="padding-right: 2%">
