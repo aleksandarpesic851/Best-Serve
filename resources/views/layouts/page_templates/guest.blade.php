@@ -13,6 +13,7 @@
     @yield('content')
   </div>
 </div>
+@include('layouts.footers.guest')
 
 @push('js')
 <script type="text/javascript">

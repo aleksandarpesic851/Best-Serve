@@ -4,8 +4,8 @@
 <div class="container">
   <div class="row justify-content-center" style="margin-top: 10%; text-align: center">
       <div class="col-12">
-        <span class="welcome-text-small welcome-text">{{ __('WELCOME TO ') }}</span>
-        <span class="welcome-text">{{ __('CHECK MY CLIENT') }}</span>
+        <span class="welcome-text-small welcome-text">{{ __('messages.welcome') }}</span>
+        <span class="welcome-text">{{ __('messages.title') }}</span>
       </div>
   </div>
 </div>

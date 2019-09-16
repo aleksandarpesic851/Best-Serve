@@ -6,8 +6,12 @@
   -->
   <div class="logo">
     <a href="/" class="simple-text logo-normal">
-      <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
-      {{ __('CHECK MY CLIENT') }}
+      <div style="text-align: center; width: 100%">
+        <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
+      </div>
+      <div style="text-align: center; width: 100%">
+        {{ __('messages.title') }}
+      </div>
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -15,33 +19,33 @@
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
           <i class="material-icons">dashboard</i>
-            <p>{{ __('Dashboard') }}</p>
+            <p>{{ __('messages.dashboard') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('profile.edit') }}">
           <i class="material-icons">person</i>
-            <p>{{ __('Your Profile') }}</p>
+            <p>{{ __('messages.your_profile') }}</p>
         </a>
       </li>
       @if(auth()->user()->isAdmin())
       <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('user.index') }}">
           <i class="material-icons">people</i>
-            <p>{{ __('User Management') }}</p>
+            <p>{{ __('messages.user_management') }}</p>
         </a>
       </li>
       @endif
       <li class="nav-item{{ $activePage == 'blacklist' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('blacklist.index') }}">
           <i class="material-icons">content_paste</i>
-            <p>{{ __('Black Lists') }}</p>
+            <p>{{ __('messages.black_lists') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'blacklist-create' ? ' active' : '' }}">
         <a class="nav-link" href="/blacklist/create">
           <i class="material-icons">edit</i>
-            <p>{{ __('Add Report') }}</p>
+            <p>{{ __('messages.add_report') }}</p>
         </a>
       </li>
     </ul>

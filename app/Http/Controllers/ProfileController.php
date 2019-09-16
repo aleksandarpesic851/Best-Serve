@@ -33,7 +33,7 @@ class ProfileController extends Controller
         {
             auth()->user()->update(["avatar" => $avatar]);
         }
-        return back()->withStatus(__('Profile successfully updated.'));
+        return back()->withStatus(__('messages.profile_update_message'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ProfileController extends Controller
     {
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
-        return back()->withStatusPassword(__('Password successfully updated.'));
+        return back()->withStatusPassword(__('messages.pwd_update_message'));
     }
 
     public function save_avatar(ProfileRequest $request){

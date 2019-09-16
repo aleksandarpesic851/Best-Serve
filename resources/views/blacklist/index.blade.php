@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'blacklist', 'titlePage' => __('Black Lists')])
+@extends('layouts.app', ['activePage' => 'blacklist', 'titlePage' => __('messages.black_lists')])
 
 @section('content')
   <div class="content">
@@ -7,43 +7,40 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary" >
-            <h3 class="card-title">Search</h3>
+            <h3 class="card-title">{{ __('messages.search') }}</h3>
             <div class="row search_form" id="search_form" style="display:none">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Full Name" type="text" name="full_name" id="full_name">
+                <input class="form-control" placeholder="{{ __('messages.full_name')}}" type="text" name="full_name" id="full_name">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Full Name" type="text" name="full_name" id="full_name">
+                <input class="form-control" data-toggle="datepicker" placeholder="{{ __('messages.birthday')}}" type="text" name="birthday" id="birthday">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" data-toggle="datepicker" placeholder="Birthday" type="text" name="birthday" id="birthday">
+                <input class="form-control" placeholder="{{ __('messages.business')}}" type="text" name="business" id="business">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Business" type="text" name="business" id="business">
+                <input class="form-control" placeholder="{{ __('messages.nationality') }}" type="text" name="nationality" id="nationality">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Nationality" type="text" name="nationality" id="nationality">
+                <input class="form-control" placeholder="{{ __('messages.national_id_card')}}" type="text" name="national_id_card_no" id="national_id_card_no">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="National Id Card Number" type="text" name="national_id_card_no" id="national_id_card_no">
+                <input class="form-control" placeholder="{{ __('messages.social_security')}}" type="text" name="social_security_no" id="social_security_no">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Social Security Number" type="text" name="social_security_no" id="social_security_no">
+                <input class="form-control" placeholder="{{ __('messages.country_residence') }}" type="text" name="country_residence" id="country_residence">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Country Residence" type="text" name="country_residence" id="country_residence">
+                <input class="form-control" placeholder="{{ __('messages.zip_code') }}" type="text" name="zip_code" id="zip_code">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Zip/Postal Code" type="text" name="zip_code" id="zip_code">
+                <input class="form-control" placeholder="{{ __('messages.content') }}" type="text" name="content" id="content">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="Content" type="text" name="content" id="content">
+                <input class="form-control" data-toggle="datepicker" type="text" name="start_date" id="start_date" placeholder="{{ __('messages.start_date') }}"> 
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" data-toggle="datepicker" type="text" name="start_date" id="start_date" placeholder="Please select start date"> 
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" data-toggle="datepicker" type="text" name="end_date" id="end_date" placeholder="Please select start date"> 
+                <input class="form-control" data-toggle="datepicker" type="text" name="end_date" id="end_date" placeholder="{{ __('messages.end_date') }}"> 
               </div>
             </div>
           </div>
@@ -64,7 +61,7 @@
 
             <div class="row">
               <div class="col-12 text-right">
-                <a href="#" class="btn btn-sm btn-primary">{{ __('Search') }}</a>
+                <a href="#" class="btn btn-sm btn-primary">{{ __('messages.search') }}</a>
               </div>
             </div>
 
@@ -72,20 +69,20 @@
             <table class="table" id="blacklist_datatable">
               <thead class="text-primary">
                   <tr>
-                    <th>Id</th>
-                    <th>No</th>
-                    <th>Photo</th>
-                    <th class="td-middle">Full Name</th>
-                    <th class="td-middle">Birthday</th>
-                    <th class="td-middle">Business</th>
-                    <th class="td-middle">Nationality</th>
-                    <th class="td-middle">Id Card</th>
-                    <th class="td-middle">Social No</th>
-                    <th class="td-middle">Country Residence</th>
-                    <th class="td-middle">Zip Code</th>
-                    <th class="td-wide">Content</th>
+                    <th>{{ __('messages.id') }}</th>
+                    <th>{{ __('messages.no') }}</th>
+                    <th>{{ __('messages.photo') }}</th>
+                    <th class="td-middle">{{ __('messages.full_name') }}</th>
+                    <th class="td-middle">{{ __('messages.birthday') }}</th>
+                    <th class="td-middle">{{ __('messages.business') }}</th>
+                    <th class="td-middle">{{ __('messages.nationality') }}</th>
+                    <th class="td-middle">{{ __('messages.id_card') }}</th>
+                    <th class="td-middle">{{ __('messages.social_no') }}</th>
+                    <th class="td-middle">{{ __('messages.country_residence') }}</th>
+                    <th class="td-middle">{{ __('messages.zip_code')}}</th>
+                    <th class="td-wide">{{ __('messages.content') }}</th>
                     @if (auth()->user()->isAdmin())
-                    <th>Action</th>
+                    <th>{{ __('messages.action') }}</th>
                     @endif
                   </tr>
               </thead>
@@ -119,7 +116,13 @@
             searching: false,
             scrollX: true,
             language: {
-              "emptyTable": "WE CANNOT FIND THE INFORMATION PROVIDED, TRY SEARCHING WITH ANOTHER FIELD"
+              emptyTable: "{{ __('messages.empty_table') }}",
+              paginate: {
+                previous: "{{ __('messages.prev') }}",
+                next:  "{{ __('messages.next') }}",
+              },
+              info: "{{ __('messages.showing_details') }}",
+              sLengthMenu: "{{ __('messages.show_entries') }}",
             },
             ajax: {
               url: "/blacklist/getdata",
@@ -167,7 +170,7 @@
         event.stopPropagation();
         const list_id = $(this).data("id");
         const token = $("meta[name='csrf-token']").attr("content");
-        if (!confirm("Are You sure want to delete !"))
+        if (!confirm("{{ __('messages.delete_blacklist_detail') }}"))
           return false;
 
         $.ajax({

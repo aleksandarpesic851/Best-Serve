@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'blacklist-management', 'titlePage' => __('Blacklist Management')])
+@extends('layouts.app', ['activePage' => 'blacklist-management', 'titlePage' => __('messages.blacklist_management')])
 
 @section('content')
 <div class="content">
@@ -8,13 +8,13 @@
                 <div class="card ">
 
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title">{{ __('Report To Black List') }}</h4>
+                        <h4 class="card-title">{{ __('messages.report_to_blacklist') }}</h4>
                         <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <a href="{{ route('blacklist.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                                <a href="{{ route('blacklist.index') }}" class="btn btn-sm btn-primary">{{ __('messages.back_list') }}</a>
                             </div>
                         </div>
 
@@ -54,7 +54,7 @@
                                         </div>
                                     </div>   
                                     <div style="text-align: center">
-                                        <button  class="btn btn-danger" id="btn-close" type="button" style="display: none" onclick="showSmallImage()">Small</button>
+                                        <button  class="btn btn-danger" id="btn-close" type="button" style="display: none" onclick="showSmallImage()">{{ __('messages.small') }}</button>
                                     </div>
                                 </div>                             
                             </div>
@@ -65,98 +65,98 @@
                             <div class="col-12 col-lg-6" style="padding-right: 2%">
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Full Name') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.full_name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }} &nbsp</h3>
                                     </div>
                                 </div>
  
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Birthday') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.birthday') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('birthday', $blacklist->birthday) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('National Id Card Number') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.national_id_card') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('national_id_card_no', $blacklist->national_id_card_no) }}&nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Zip Code') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.zip_code') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('zip_code', $blacklist->zip_code) }}&nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Full Name') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.full_name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('full_name', $blacklist->full_name) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('First Name') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.first_name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('firstname', $blacklist->firstname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Maiden Name') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.maiden_name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('maidenname', $blacklist->maidenname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Country of Birth') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.country_birth') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('country_birth', $blacklist->country_birth) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Color of Eye') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.color_eye') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('color_eye', $blacklist->color_eye) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Visible Peculiarity') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.visible_pesuliarity') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('visible_peculiarity', $blacklist->visible_peculiarity) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Profession') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.profession') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('profession', $blacklist->profession) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surburb') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.surburb') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('surburb', $blacklist->surburb) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Telephone Number') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.telephone') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('telephone_no', $blacklist->telephone_no) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Phone Number') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.phone') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('phone_no', $blacklist->phone_no) }} &nbsp</h3>
                                     </div>
@@ -166,105 +166,98 @@
 
                             <div class="col-12 col-lg-6" style="padding-left: 2%">
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Business') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.business') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('business', $blacklist->business) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Nationality') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.nationality') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('nationality', $blacklist->nationality) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Social Security Number') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.social_security') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('social_security_no', $blacklist->social_security_no) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Country Residence') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.country_residence') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('country_residence', $blacklist->country_residence) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surname') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.surname') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Surname') }}</label>
-                                    <div class="col-7 col-sm-8 col-md-9">
-                                        <h3 class="blackinformation">{{ old('surname', $blacklist->surname) }} &nbsp</h3>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Other Name') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.other_name') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('othername', $blacklist->othername) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('City of Birth') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.city_birth') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('city_birth', $blacklist->city_birth) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Height') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.height') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('height', $blacklist->height) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Color of Hair') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.color_hair') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('color_hair', $blacklist->color_hair) }} &nbsp</h3>
                                     </div>
                                 </div>
                                 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Marital Status') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.marital_status') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('marital_status', $blacklist->marital_status) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('City Residence') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.city_residence') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('city_residence', $blacklist->city_residence) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Postal Address') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.postal_address') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('postal_address', $blacklist->postal_address) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Email') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.email') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('email', $blacklist->email) }} &nbsp</h3>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('Accomplice') }}</label>
+                                    <label class="col-5 col-sm-4 col-md-3 col-form-label">{{ __('messages.accoplice') }}</label>
                                     <div class="col-7 col-sm-8 col-md-9">
                                         <h3 class="blackinformation">{{ old('accomplice', $blacklist->accomplice) }} &nbsp</h3>
                                     </div>
@@ -276,7 +269,7 @@
                         <br>
                         <div class="row padding5">
                             <div class="col-12">
-                                <label class="col-12 col-form-label">{{ __('Report Contents') }}</label>
+                                <label class="col-12 col-form-label">{{ __('messages.report_content') }}</label>
                                 <div class="col-12">
                                     <h5>{{ old('content', $blacklist->content) }}</h5>
                                 </div>

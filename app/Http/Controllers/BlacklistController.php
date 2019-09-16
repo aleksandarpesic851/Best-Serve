@@ -50,7 +50,7 @@ class BlacklistController extends Controller
         $newUser->avatar = $avatar;
         $newUser->content_files = $content_files;
         $newUser->save();
-        return redirect()->route('blacklist.index')->withStatus(__('New report successfully created.'));
+        return redirect()->route('blacklist.index')->withStatus(__('messages.blacklist_create_message'));
     }
 
     public function destroy($id)
@@ -79,7 +79,7 @@ class BlacklistController extends Controller
         }
         $model->update(['content_files' => $content_files]);
         
-        return redirect()->route('blacklist.index')->withStatus(__('Blacklist successfully updated.'));
+        return redirect()->route('blacklist.index')->withStatus(__('messages.blacklist_updated_message'));
     }
 
     private function save_avatar(Request $request){

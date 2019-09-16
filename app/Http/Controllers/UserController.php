@@ -43,7 +43,7 @@ class UserController extends Controller
         $newUser = $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
         $newUser->avatar = $avatar;
         $newUser->save();
-        return redirect()->route('user.index')->withStatus(__('User successfully created.'));
+        return redirect()->route('user.index')->withStatus(__('messages.user_create_message'));
     }
 
     private function save_avatar(UserRequest $request){
@@ -85,7 +85,7 @@ class UserController extends Controller
         {
             $user->update(['avatar' => $avatar]);
         }
-        return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
+        return redirect()->route('user.index')->withStatus(__('messages.user_update_message'));
     }
 
     /**
@@ -98,6 +98,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
+        return redirect()->route('user.index')->withStatus(__('messages.user_delete_message'));
     }
 }

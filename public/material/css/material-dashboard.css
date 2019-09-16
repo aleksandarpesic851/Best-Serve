@@ -14461,6 +14461,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 2;
 }
 
 @media screen and (min-width: 768px) {
@@ -18835,7 +18836,7 @@ Copyright (c) 2015 Daniel Eden
 
 .page-header .footer {
   flex-grow: 0;
-  position: static
+  position: static;
 }
 
 .page-header.login-page {

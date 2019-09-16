@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => __('User Management')])
+@extends('layouts.app', ['activePage' => 'user-management', 'titlePage' => __('messages.user_management')])
 
 @section('content')
   <div class="content">
@@ -11,14 +11,14 @@
 
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Edit User') }}</h4>
+                <h4 class="card-title">{{ __('messages.edit_user') }}</h4>
                 <p class="card-category"></p>
               </div>
               
               <div class="card-body ">
                 <div class="row">
                   <div class="col-md-12 text-right">
-                      <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                      <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('messages.back_list') }}</a>
                   </div>
                 </div>
 
@@ -34,10 +34,10 @@
                   <div class="col-sm-8">
 
                     <div class="row">
-                      <label class="col-sm-3 col-form-label">{{ __('Name') }}</label>
+                      <label class="col-sm-3 col-form-label">{{ __('messages.name') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('Name') }}" value="{{ old('name', $user->name) }}" required="true" aria-required="true"/>
+                          <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('messages.name') }}" value="{{ old('name', $user->name) }}" required="true" aria-required="true"/>
                           @if ($errors->has('name'))
                             <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                           @endif
@@ -45,10 +45,10 @@
                       </div>
                     </div>
                     <div class="row">
-                      <label class="col-sm-3 col-form-label">{{ __('ID') }}</label>
+                      <label class="col-sm-3 col-form-label">{{ __('messages.id') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="text" placeholder="{{ __('ID') }}" value="{{ old('email', $user->email) }}" required />
+                          <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="text" placeholder="{{ __('messages.id') }}" value="{{ old('email', $user->email) }}" required />
                           @if ($errors->has('email'))
                             <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                           @endif
@@ -56,10 +56,10 @@
                       </div>
                     </div>
                     <div class="row">
-                      <label class="col-sm-3 col-form-label" for="input-password">{{ __(' Password') }}</label>
+                      <label class="col-sm-3 col-form-label" for="input-password">{{ __('messages.password') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" input type="password" name="password" id="input-password" placeholder="{{ __('Password') }}" />
+                          <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" input type="password" name="password" id="input-password" placeholder="{{ __('messages.password') }}" />
                           @if ($errors->has('password'))
                             <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('password') }}</span>
                           @endif
@@ -67,19 +67,19 @@
                       </div>
                     </div>
                     <div class="row">
-                      <label class="col-sm-3 col-form-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
+                      <label class="col-sm-3 col-form-label" for="input-password-confirmation">{{ __('messages.confirm_password') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group">
-                          <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('Confirm Password') }}" />
+                          <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('messages.confirm_password') }}" />
                         </div>
                       </div>
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-3 col-form-label">{{ __('Company') }}</label>
+                      <label class="col-sm-3 col-form-label">{{ __('messages.company') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('Company') }}" value="{{ old('company', $user->company) }}" required />
+                          <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('messages.company') }}" value="{{ old('company', $user->company) }}" required />
                           @if ($errors->has('company'))
                             <span id="company-error" class="error text-danger" for="input-company">{{ $errors->first('company') }}</span>
                           @endif
@@ -88,10 +88,10 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-3 col-form-label">{{ __('Contact') }}</label>
+                      <label class="col-sm-3 col-form-label">{{ __('messages.contact') }}</label>
                       <div class="col-sm-7">
                         <div class="form-group{{ $errors->has('contact') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" id="input-contact" type="text" placeholder="{{ __('Contact') }}" value="{{ old('contact', $user->contact) }}" />
+                          <input class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" id="input-contact" type="text" placeholder="{{ __('messages.contact') }}" value="{{ old('contact', $user->contact) }}" />
                           @if ($errors->has('contact'))
                             <span id="contact-error" class="error text-danger" for="input-contact">{{ $errors->first('email') }}</span>
                           @endif
@@ -104,7 +104,7 @@
               </div>
 
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('messages.save') }}</button>
               </div>
             </div>
           </form>

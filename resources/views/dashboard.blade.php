@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('messages.dashboard')])
 
 @section('content')
   <div class="content">
@@ -11,7 +11,7 @@
               <div class="ct-chart" id="userChat"></div>
             </div>
             <div class="card-body">
-              <h4 class="card-title">Registered Users - <span class="text-success"> {{$totalUser}} </span> </h4>
+              <h4 class="card-title">{{ __('messages.registerd_users')}} - <span class="text-success"> {{$totalUser}} </span> </h4>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -26,7 +26,7 @@
               <div class="ct-chart" id="blackChart"></div>
             </div>
             <div class="card-body">
-              <h4 class="card-title">Reported Black Lists - <span class="text-success"> {{$totalBlacklist}} </span></h4>
+              <h4 class="card-title">{{ __('messages.reported_blacklist')}} - <span class="text-success"> {{$totalBlacklist}} </span></h4>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -39,17 +39,17 @@
        
         <div class="card">
           <div class="card-header card-header-warning">
-            <h4 class="card-title">Latest Black Lists</h4>
-            <p class="card-category">New 5 Black lists, reported by users</p>
+            <h4 class="card-title">{{ __('messages.latest_blacklist')}}</h4>
+            <p class="card-category">{{ __('messages.latest_blacklist_detail')}}</p>
           </div>
           <div class="card-body table-responsive">
             <table class="table table-hover">
               <thead class="text-warning">
-                <th>No</th>
-                <th>Photo</th>
-                <th>Name</th>
-                <th>Country</th>
-                <th class="text-center">Content</th>
+                <th>{{ __('messages.no')}}</th>
+                <th>{{ __('messages.photo')}}</th>
+                <th>{{ __('messages.name')}}</th>
+                <th>{{ __('messages.country')}}</th>
+                <th class="text-center">{{ __('messages.content')}}</th>
               </thead>
               <tbody>
               <?php $i = 0;?>

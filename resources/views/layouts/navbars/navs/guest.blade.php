@@ -20,20 +20,20 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a href="/contact" class="nav-link">
-            <i class="material-icons">contacts</i> {{ __('Contact Us') }}
+            <i class="material-icons">contacts</i> {{ __('messages.contact_us') }}
           </a>
         </li>
         @guest()
         <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}">
           <a href="{{ route('login') }}" class="nav-link">
-            <i class="material-icons">fingerprint</i> {{ __('Login') }}
+            <i class="material-icons">fingerprint</i> {{ __('messages.login') }}
           </a>
         </li>
         @endguest
         @auth()
         <li class="nav-item{{ $activePage == 'logout' ? ' active' : '' }}">
           <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-            <i class="material-icons">fingerprint</i> {{ __('Logout') }}
+            <i class="material-icons">fingerprint</i> {{ __('messages.logout') }}
           </a>
         </li>
         @endauth
