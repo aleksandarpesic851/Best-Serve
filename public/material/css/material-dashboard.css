@@ -19036,4 +19036,15 @@ svg.ct-chart-bar, svg.ct-chart-line{
 .welcome-text-small {
   font-size: 2rem !important;
 }
+
+.file-div {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+#content-images {
+  background: rgb(237, 237, 237);
+}
 /*# sourceMappingURL=dashboard-free.css.map */

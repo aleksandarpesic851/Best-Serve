@@ -114,9 +114,12 @@ return [
     'update' => 'Update',
     'blacklist_updated_message' => 'Blacklist successfully updated.',
     'blacklist_create_message' => 'New report successfully created.',
+    'choose_file' => 'Choose File',
+    'file_not_choose' => 'File Not Choosen',
     //blacklist show
     'report_content' => 'Report Contents',
     'small' => 'Small',
+
 ];
 
 ?>

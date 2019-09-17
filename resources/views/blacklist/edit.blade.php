@@ -387,18 +387,23 @@
                 </div>
 
                 <div class="row padding5">
-                  <div class="input-group control-group increment col-sm-12">
-                    <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
-                    <div class="input-group-btn"> 
-                      <button class="btn btn-success" type="button">{{ __('messages.add')}}</button>
-                    </div>
-                  </div>
                   <div class="clone hide">
                     <div class="control-group input-group col-sm-12" style="margin-top:10px">
-                      <input type="file" name="contentfiles[]" class="form-control" accept="image/*">
-                      <div class="input-group-btn"> 
-                        <button class="btn btn-danger remove" type="button">{{ __('messages.remove')}}</button>
+                      <div class="file-div">
+                        <input type="file" id="input0" name="contentfiles[]" accept="image/*">
                       </div>
+                      <div class="input-group-btn"> 
+                        <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> {{ __('messages.remove') }}</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="input-group control-group increment col-sm-12">
+                    <div class="file-div">
+                      <input type="file" id="input1" name="contentfiles[]" accept="image/*">
+                    </div>
+                    <div class="input-group-btn"> 
+                      <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>{{ __('messages.add') }}</button>
                     </div>
                   </div>
                 </div>
@@ -418,6 +423,7 @@
 @push('js')
 <link  href="/material/datepicker/datepicker.css" rel="stylesheet">
 <script src="/material/datepicker/datepicker.js"></script>
+<script src="/material/js/core/bootstrap-filestyle.min.js"></script>
 
 <script type="text/javascript">
     <?php
@@ -426,6 +432,7 @@
     let remainImageIndexs = [];
     
     $(document).ready(function() {
+    var fileCnt = 2;
       
       if (content_images) {
             let image_html = "";
@@ -459,12 +466,31 @@
 
       
       $(".increment .btn-success").click(function(){ 
-          var html = $(".clone").html();
-          $(".increment").after(html);
+        var html = $(".clone").html();
+        html = html.replace(/input0/g, 'input' + fileCnt);
+        $(".increment").after(html);
+        $('#input' + fileCnt).filestyle({
+          // button text
+          'text' : '{{ __("messages.choose_file") }}',
+          // CSS class of button
+          'btnClass' : 'btn-warning',
+          // custom placeholder
+          'placeholder': '{{ __("messages.file_not_choose") }}',
+        });
+        fileCnt++;
       });
 
       $("body").on("click",".remove",function(){ 
           $(this).parents(".control-group").remove();
+      });
+
+      $('#input1').filestyle({
+        // button text
+        'text' : '{{ __("messages.choose_file") }}',
+        // CSS class of button
+        'btnClass' : 'btn-warning',
+        // custom placeholder
+        'placeholder': '{{ __("messages.file_not_choose") }}',
       });
 
     });

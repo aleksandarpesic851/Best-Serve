@@ -114,6 +114,8 @@ return [
     'update' => 'Обновить',
     'blacklist_updated_message' => 'Черный список успешно обновлен.',
     'blacklist_create_message' => 'Новый отчет успешно создан.',
+    'choose_file' => 'выберите файл',
+    'file_not_choose' => 'Файл не выбран',
     //blacklist show
     'report_content' => 'Содержание отчета',
     'small' => 'Небольшой',
