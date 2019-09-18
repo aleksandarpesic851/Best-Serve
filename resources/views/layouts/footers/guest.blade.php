@@ -2,16 +2,17 @@
     <div class="container">
         <div class="copyright float-right">
             <ul>
-                <li>
-                <a href="/locale/en">
-                    {{ __('messages.english') }}
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/locale/en">
+                        <img src="/material/img/us_flag.png" class="lan-flag">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/locale/ru">
+                        <img src="/material/img/ru_flag.png" class="lan-flag">
+                    </a>
                 </li>
                 <li>
-                <a href="/locale/ru">
-                    {{ __('messages.russian') }}
-                </a>
-                </li>
             </ul>
         </div>
     </div>

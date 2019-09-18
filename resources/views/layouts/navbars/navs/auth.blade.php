@@ -12,6 +12,16 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/locale/en">
+            <img src="/material/img/us_flag.png" class="lan-flag">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/locale/ru">
+            <img src="/material/img/ru_flag.png" class="lan-flag">
+          </a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="avatar-account" src="/uploads/avatars/{{ old('avatar', auth()->user()->avatar) }}">

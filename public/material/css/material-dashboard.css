@@ -19047,4 +19047,9 @@ svg.ct-chart-bar, svg.ct-chart-line{
 #content-images {
   background: rgb(237, 237, 237);
 }
+
+.lan-flag {
+  width: 30px;
+  height: 30px;
+}
 /*# sourceMappingURL=dashboard-free.css.map */
