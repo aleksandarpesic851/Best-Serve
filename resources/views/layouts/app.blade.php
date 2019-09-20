@@ -3,6 +3,14 @@
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Helping Hoteliers, Realtors, Hosts and Rental Business get the real story of their customers before providing them new services." >
+    <meta data-hid="og:description" name="og:description" property="og:description" content="Helping Hoteliers, Realtors, Hosts and Rental Business get the real story of their customers before providing them new services.">
+    <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Check My Client">
+    <meta data-hid="og:type" name="og:type" property="og:type" content="Service">
+    <meta data-hid="og:url" name="og:url" property="og:url" content="https://checkmyclient.net">
+    <meta data-hid="og:image" name="og:image" property="og:image" content="https://checkmyclient.net/material/img/logo.png">
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ __('messages.title') }}</title>
@@ -18,6 +26,7 @@
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
+        <h1 style="display:none">Helping Hoteliers, Realtors, Hosts and Rental Business get the real story of their customers before providing them new services.</h1>
         @if (\Request::is('/', 'contact'))  
             @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

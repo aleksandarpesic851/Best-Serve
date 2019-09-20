@@ -32,33 +32,7 @@
                             </div>
                         </div>
 
-<br>
-                        <div class="ro1 padding5">
-                            <div class="col-12">
-                                <div style="align-items: center;">
-                                    <div id="content-images" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner" id="carousel-content">
-                                            <div style="align-items: center;">
-                                                <p>There is no attachted images</p>
-                                            </div>
-                                        </div>
-                                        <div id="carousel-controler" style='display: none;'>
-                                            <a class="carousel-control-prev" href="#content-images" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#content-images" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </div>
-                                    </div>   
-                                    <div style="text-align: center">
-                                        <button  class="btn btn-danger" id="btn-close" type="button" style="display: none" onclick="showSmallImage()">{{ __('messages.small') }}</button>
-                                    </div>
-                                </div>                             
-                            </div>
-                        </div>
+
 <br>                        
                         <div class="row padding5">
                         
@@ -275,12 +249,79 @@
                                 </div>
                             </div>
                         </div>
+
+                        <br>
+                        <div class="ro1 padding5">
+                            <div class="col-12">
+                                <div style="align-items: center;">
+                                    <div id="content-images" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner" id="carousel-content">
+                                            <div style="align-items: center;">
+                                                <p>There is no attachted images</p>
+                                            </div>
+                                        </div>
+                                        <div id="carousel-controler" style='display: none;'>
+                                            <a class="carousel-control-prev carousel-control-button" href="#content-images" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next carousel-control-button" href="#content-images" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>   
+                                </div>                             
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="image-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="add-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered custom-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Images</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="ro1 padding5">
+            <div class="col-12">
+                <div style="align-items: center;">
+                    <div id="content-images-dialog" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" id="carousel-content-dialog">
+                            <div style="align-items: center;">
+                                <p>There is no attachted images</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="carousel-control-prev" href="#content-images-dialog" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#content-images-dialog" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>   
+                </div>                             
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection
 
 @push('js')
@@ -305,20 +346,14 @@
             });
             $('#carousel-content').html(carousel_html);
             $('#carousel-controler').show();
-            $('#content-images').on('click', function() {
-                $('#content-images img').removeClass('slider-image');
-                $('#content-images img').removeClass('img-fluid');
-                $('#content-images img').addClass('img-fullscreen');
-                $('#btn-close').show();
+            $('#carousel-content-dialog').html(carousel_html);
+            $('#carousel-content-dialog img').removeClass('slider-image');
+            $('#carousel-content-dialog img').removeClass('img-fluid');
+            $('#carousel-content').on('click', function() {
+                $('#image-modal').modal('show');
             })
         }
     });
 
-    function showSmallImage() {
-        $('#content-images img').addClass('slider-image');
-        $('#content-images img').addClass('img-fluid');
-        $('#content-images img').removeClass('img-fullscreen');
-        $('#btn-close').hide();
-    }
 </script>
 @endpush

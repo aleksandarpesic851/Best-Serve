@@ -19052,4 +19052,8 @@ svg.ct-chart-bar, svg.ct-chart-line{
   width: 30px;
   height: 30px;
 }
+
+.custom-modal {
+  max-width: 90%;
+}
 /*# sourceMappingURL=dashboard-free.css.map */
