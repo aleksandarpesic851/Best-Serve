@@ -42,8 +42,7 @@
                   <div class="col-lg-6">
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.full_name') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('full_name') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('full_name') ? ' is-invalid' : '' }}" name="full_name" id="input-full_name" type="text" placeholder="{{ __('messages.full_name') }}" value="{{ old('full_name') }}" required="true" aria-required="true"/>
                           @if ($errors->has('full_name'))
@@ -54,8 +53,7 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label" for="input-birthday">{{ __('messages.birthday') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group">
                           <input class="form-control" data-toggle="datepicker" name="birthday" id="input-birthday" type="text" placeholder="{{ __('messages.birthday') }}" value="" required />
                         </div>
@@ -63,8 +61,7 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.national_id_card') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('national_id_card_no') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('national_id_card_no') ? ' is-invalid' : '' }}" name="national_id_card_no" id="input-national_id_card_no" type="text" placeholder="{{ __('messages.national_id_card') }}" value="{{ old('national_id_card_no') }}" />
                           @if ($errors->has('national_id_card_no'))
@@ -75,8 +72,7 @@
                     </div>
 
                     <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.zip_code') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                           <div class="form-group{{ $errors->has('zip_code') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('zip_code') ? ' is-invalid' : '' }}" name="zip_code" id="input-zip_code" type="text" placeholder="{{ __('messages.zip_code') }}" value="{{ old('zip_code') }}" />
                             @if ($errors->has('zip_code'))
@@ -87,8 +83,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.first_name') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('firstname') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" id="input-firstname" type="text" placeholder="{{ __('messages.first_name') }}" value="{{ old('firstname') }}" />
                             @if ($errors->has('firstname'))
@@ -99,8 +94,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.maiden_name') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('maidenname') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('maidenname') ? ' is-invalid' : '' }}" name="maidenname" id="input-maidenname" type="text" placeholder="{{ __('messages.maiden_name') }}" value="{{ old('maidenname') }}" />
                             @if ($errors->has('maidenname'))
@@ -111,8 +105,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.country_birth') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('country_birth') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('country_birth') ? ' is-invalid' : '' }}" name="country_birth" id="input-country_birth" type="text" placeholder="{{ __('messages.country_birth') }}" value="{{ old('country_birth') }}" />
                             @if ($errors->has('country_birth'))
@@ -123,8 +116,7 @@
                       </div>
 
                        <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.color_eye') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                       <div class="col-12">
                           <div class="form-group{{ $errors->has('color_eye') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('color_eye') ? ' is-invalid' : '' }}" name="color_eye" id="input-color_eye" type="text" placeholder="{{ __('messages.color_eye') }}" value="{{ old('color_eye') }}" />
                             @if ($errors->has('color_eye'))
@@ -135,8 +127,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.visible_pesuliarity') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('visible_peculiarity') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('visible_peculiarity') ? ' is-invalid' : '' }}" name="visible_peculiarity" id="input-visible_peculiarity" type="text" placeholder="{{ __('messages.visible_pesuliarity') }}" value="{{ old('visible_peculiarity') }}" />
                             @if ($errors->has('visible_peculiarity'))
@@ -147,8 +138,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.profession') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('profession') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('profession') ? ' is-invalid' : '' }}" name="profession" id="input-profession" type="text" placeholder="{{ __('messages.profession') }}" value="{{ old('profession') }}" />
                             @if ($errors->has('profession'))
@@ -159,8 +149,7 @@
                       </div>
 
                        <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.surburb') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                       <div class="col-12">
                           <div class="form-group{{ $errors->has('surburb') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('surburb') ? ' is-invalid' : '' }}" name="surburb" id="input-surburb" type="text" placeholder="{{ __('messages.surburb') }}" value="{{ old('surburb') }}" />
                             @if ($errors->has('surburb'))
@@ -171,8 +160,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.telephone') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('telephone_no') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('telephone_no') ? ' is-invalid' : '' }}" name="telephone_no" id="input-telephone_no" type="text" placeholder="{{ __('messages.telephone') }}" value="{{ old('telephone_no') }}" />
                             @if ($errors->has('telephone_no'))
@@ -183,8 +171,7 @@
                       </div>
 
                        <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.phone') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                       <div class="col-12">
                           <div class="form-group{{ $errors->has('phone_no') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('phone_no') ? ' is-invalid' : '' }}" name="phone_no" id="input-phone_no" type="text" placeholder="{{ __('messages.phone') }}" value="{{ old('phone_no') }}" />
                             @if ($errors->has('phone_no'))
@@ -199,8 +186,7 @@
                   <div class="col-lg-6">
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label" for="input-business">{{ __('messages.business') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('business') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('business') ? ' is-invalid' : '' }}" input type="text" name="business" id="input-business" placeholder="{{ __('messages.business') }}" value="" required />
                           @if ($errors->has('business'))
@@ -211,8 +197,7 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.nationality') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('nationality') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('nationality') ? ' is-invalid' : '' }}" name="nationality" id="input-nationality" type="text" placeholder="{{ __('messages.nationality') }}" value="{{ old('nationality') }}" required />
                           @if ($errors->has('nationality'))
@@ -223,8 +208,7 @@
                     </div>
                     
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.social_security') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('social_security_no') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('social_security_no') ? ' is-invalid' : '' }}" name="social_security_no" id="input-social_security_no" type="text" placeholder="{{ __('messages.social_security') }}" value="{{ old('social_security_no') }}" />
                           @if ($errors->has('social_security_no'))
@@ -235,8 +219,7 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.country_residence') }}</label>
-                      <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                         <div class="form-group{{ $errors->has('country_residence') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('country_residence') ? ' is-invalid' : '' }}" name="country_residence" id="input-country_residence" type="text" placeholder="{{ __('messages.country_residence') }}" value="{{ old('country_residence') }}" />
                           @if ($errors->has('country_residence'))
@@ -247,8 +230,7 @@
                     </div>
 
                     <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.surname') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                           <div class="form-group{{ $errors->has('surname') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" id="input-surname" type="text" placeholder="{{ __('messages.surname') }}" value="{{ old('surname') }}" />
                             @if ($errors->has('surname'))
@@ -259,8 +241,7 @@
                     </div>
 
                     <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.other_name') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                    <div class="col-12">
                           <div class="form-group{{ $errors->has('othername') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('othername') ? ' is-invalid' : '' }}" name="othername" id="input-othername" type="text" placeholder="{{ __('messages.other_name') }}" value="{{ old('messages.other_name') }}" />
                             @if ($errors->has('othername'))
@@ -271,8 +252,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.city_birth') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('city_birth') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('city_birth') ? ' is-invalid' : '' }}" name="city_birth" id="input-city_birth" type="text" placeholder="{{ __('messages.city_birth') }}" value="{{ old('city_birth') }}" />
                             @if ($errors->has('city_birth'))
@@ -283,8 +263,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.height') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('height') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('height') ? ' is-invalid' : '' }}" name="height" id="input-height" type="text" placeholder="{{ __('messages.height') }}" value="{{ old('height') }}" />
                             @if ($errors->has('height'))
@@ -295,8 +274,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.color_hair') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('color_hair') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('color_hair') ? ' is-invalid' : '' }}" name="color_hair" id="input-color_hair" type="text" placeholder="{{ __('messages.color_hair') }}" value="{{ old('color_hair') }}" />
                             @if ($errors->has('color_hair'))
@@ -307,8 +285,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.marital_status') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('marital_status') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('marital_status') ? ' is-invalid' : '' }}" name="marital_status" id="input-marital_status" type="text" placeholder="{{ __('messages.marital_status') }}" value="{{ old('marital_status') }}" />
                             @if ($errors->has('marital_status'))
@@ -319,8 +296,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.city_residence') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('city_residence') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('city_residence') ? ' is-invalid' : '' }}" name="city_residence" id="input-city_residence" type="text" placeholder="{{ __('messages.city_residence') }}" value="{{ old('city_residence') }}" />
                             @if ($errors->has('city_residence'))
@@ -331,8 +307,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.postal_address') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('postal_address') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('postal_address') ? ' is-invalid' : '' }}" name="postal_address" id="input-postal_address" type="text" placeholder="{{ __('messages.postal_address') }}" value="{{ old('postal_address') }}" />
                             @if ($errors->has('postal_address'))
@@ -343,8 +318,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.email') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('messages.email') }}" value="{{ old('email') }}" />
                             @if ($errors->has('email'))
@@ -355,8 +329,7 @@
                       </div>
 
                       <div class="row">
-                        <label class="col-sm-4 col-md-3 col-form-label">{{ __('messages.accoplice') }}</label>
-                        <div class="col-sm-8 col-md-9">
+                      <div class="col-12">
                           <div class="form-group{{ $errors->has('accomplice') ? ' has-danger' : '' }}">
                             <input class="form-control{{ $errors->has('accomplice') ? ' is-invalid' : '' }}" name="accomplice" id="input-accomplice" type="text" placeholder="{{ __('messages.accoplice') }}" value="{{ old('accomplice') }}" />
                             @if ($errors->has('accomplice'))
@@ -383,6 +356,7 @@
                   </div>
                 </div>
                 
+                <br>
                 <div class="row padding5">
                   <div class="clone hide">
                     <div class="control-group input-group col-sm-12" style="margin-top:10px">
