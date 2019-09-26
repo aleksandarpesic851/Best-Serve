@@ -16,7 +16,7 @@
                 <input class="form-control" data-toggle="datepicker" placeholder="{{ __('messages.birthday')}}" type="text" name="birthday" id="birthday">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="{{ __('messages.business')}}" type="text" name="business" id="business">
+                <input class="form-control" placeholder="{{ __('messages.provided_service')}}" type="text" name="provided_service" id="provided_service">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
                 <input class="form-control" placeholder="{{ __('messages.nationality') }}" type="text" name="nationality" id="nationality">
@@ -31,16 +31,16 @@
                 <input class="form-control" placeholder="{{ __('messages.search_residence') }}" type="text" name="country_residence" id="country_residence">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="{{ __('messages.zip_code') }}" type="text" name="zip_code" id="zip_code">
+                <input class="form-control" placeholder="{{ __('messages.accoplice') }}" type="text" name="accomplice" id="accomplice">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" placeholder="{{ __('messages.content') }}" type="text" name="content" id="content">
+                <input class="form-control" placeholder="{{ __('messages.affected_entity') }}" type="text" name="affected_entity" id="affected_entity">
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" data-toggle="datepicker" type="text" name="start_date" id="start_date" placeholder="{{ __('messages.start_date') }}"> 
+                <input class="form-control" type="text" name="denounced_action" id="denounced_action" placeholder="{{ __('messages.denounced_action') }}"> 
               </div>
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 md-form">
-                <input class="form-control" data-toggle="datepicker" type="text" name="end_date" id="end_date" placeholder="{{ __('messages.end_date') }}"> 
+                <input class="form-control" type="text" name="place_facts" id="place_facts" placeholder="{{ __('messages.place_facts') }}"> 
               </div>
             </div>
           </div>
@@ -71,16 +71,18 @@
                   <tr>
                     <th>{{ __('messages.id') }}</th>
                     <th>{{ __('messages.no') }}</th>
-                    <th>{{ __('messages.photo') }}</th>
+                    <th class="td-middle">{{ __('messages.photo') }}</th>
                     <th class="td-middle">{{ __('messages.full_name') }}</th>
                     <th class="td-middle">{{ __('messages.birthday') }}</th>
-                    <th class="td-middle">{{ __('messages.business') }}</th>
+                    <th class="td-middle">{{ __('messages.provided_service') }}</th>
                     <th class="td-middle">{{ __('messages.nationality') }}</th>
                     <th class="td-middle">{{ __('messages.id_card') }}</th>
                     <th class="td-middle">{{ __('messages.social_no') }}</th>
                     <th class="td-middle">{{ __('messages.search_residence') }}</th>
-                    <th class="td-middle">{{ __('messages.zip_code')}}</th>
-                    <th class="td-wide">{{ __('messages.content') }}</th>
+                    <th class="td-middle">{{ __('messages.accoplice')}}</th>
+                    <th class="td-middle">{{ __('messages.affected_entity') }}</th>
+                    <th class="td-middle">{{ __('messages.denounced_action') }}</th>
+                    <th class="td-middle">{{ __('messages.place_facts') }}</th>
                     @if (auth()->user()->isAdmin())
                     <th>{{ __('messages.action') }}</th>
                     @endif
@@ -128,17 +130,17 @@
               url: "/blacklist/getdata",
               type: 'GET',
               data: function (d) {
-                d.start_date = $('#start_date').val();
-                d.end_date = $('#end_date').val();
+                d.denounced_action = $('#denounced_action').val();
+                d.place_facts = $('#place_facts').val();
                 d.full_name = $('#full_name').val();
                 d.birthday = $('#birthday').val();
-                d.business = $('#business').val();
+                d.provided_service = $('#provided_service').val();
                 d.nationality = $('#nationality').val();
                 d.national_id_card_no = $('#national_id_card_no').val();
                 d.social_security_no = $('#social_security_no').val();
                 d.country_residence = $('#country_residence').val();
-                d.zip_code = $('#zip_code').val();
-                d.content = $('#content').val();
+                d.accomplice = $('#accomplice').val();
+                d.affected_entity = $('#affected_entity').val();
               }
             },
             columns: [
@@ -147,13 +149,15 @@
                       {data: 'avatar', name: 'avatar', orderable: false,searchable: false},
                       { data: 'full_name', name: 'full_name' },
                       { data: 'birthday', name: 'birthday' },
-                      { data: 'business', name: 'business' },
+                      { data: 'provided_service', name: 'provided_service' },
                       { data: 'nationality', name: 'nationality' },
                       { data: 'national_id_card_no', name: 'national_id_card_no' },
                       { data: 'social_security_no', name: 'social_security_no' },
                       { data: 'country_residence', name: 'country_residence' },
-                      { data: 'zip_code', name: 'zip_code' },
-                      { data: 'content', name: 'content' },
+                      { data: 'accomplice', name: 'accomplice' },
+                      { data: 'affected_entity', name: 'affected_entity' },
+                      { data: 'denounced_action', name: 'denounced_action' },
+                      { data: 'place_facts', name: 'place_facts' },
                       @if (auth()->user()->isAdmin())
                       {data: 'action', name: 'action', orderable: false},
                       @endif

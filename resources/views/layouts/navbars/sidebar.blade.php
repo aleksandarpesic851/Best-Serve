@@ -15,6 +15,15 @@
     </a>
   </div>
   <div class="sidebar-wrapper">
+    <ul class="nav logo" style="padding: 0">
+        <a class="nav-link" href="{{ route('profile.edit') }}">
+          <div style="text-align: center">
+            <img class="avatar-account" src="/uploads/avatars/{{ old('avatar', auth()->user()->avatar) }}">
+            <strong style="color: rgb(122, 140, 180); font-size: 20px">&nbsp&nbsp{{ old('company', auth()->user()->company) }}</strong>
+          </div>
+        </a>
+    </ul>
+    
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
@@ -48,6 +57,43 @@
             <p>{{ __('messages.add_report') }}</p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#email-dialog">
+          <i class="material-icons">contacts</i>
+            <p>{{ __('messages.support') }}</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          <i class="material-icons">fingerprint</i>
+            <p>{{ __('messages.logout') }}</p>
+        </a>
+      </li>
     </ul>
+  </div>
+</div>
+
+<div class="modal fade" id="email-dialog" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="add-modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>{{ __('messages.contact_us') }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="material-icons">email</i>{{ __('messages.email')}}:
+            </span>
+          </div>
+          <span class="form-control" style="background: none"><h4>admin@checkmyclient.net</h4></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
   </div>
 </div>

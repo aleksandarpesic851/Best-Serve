@@ -36,42 +36,72 @@
         </div>
       </div>
       <div class="row">
-       
-        <div class="card">
-          <div class="card-header card-header-warning">
-            <h4 class="card-title">{{ __('messages.latest_blacklist')}}</h4>
-            <p class="card-category">{{ __('messages.latest_blacklist_detail')}}</p>
-          </div>
-          <div class="card-body table-responsive">
-            <table class="table table-hover">
-              <thead class="text-warning">
-                <th>{{ __('messages.no')}}</th>
-                <th>{{ __('messages.photo')}}</th>
-                <th>{{ __('messages.name')}}</th>
-                <th>{{ __('messages.country')}}</th>
-                <th class="text-center">{{ __('messages.content')}}</th>
-              </thead>
-              <tbody>
-              <?php $i = 0;?>
-              @foreach($blacklists as $blacklist)
-                <?php $i++; ?>
-                <tr onclick="document.location.href='/blacklist/showdata/{{$blacklist->id}}'">
-                  <td>{{$i}}</td>
-                  @if($blacklist->avatar)
-                  <td><img src="/uploads/blacklists/{{$blacklist->avatar}}" class="avatar-blacklist"></td>
-                  @else
-                  <td><img src="/material/img/user.png" class="avatar-blacklist"></td>
-                  @endif
-                  <td>{{$blacklist->full_name}}</td>
-                  <td>{{$blacklist->country_residence}}</td>
-                  <td class="td-wide">{{$blacklist->content}}</td>
-                </tr>
-              @endforeach
-              </tbody>
-            </table>
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-header card-header-success">
+              <h4 class="card-title">{{ __('messages.latest_user')}}</h4>
+            </div>
+            <div class="card-body table-responsive user-table">
+              <table class="table">
+                <thead class="text-warning">
+                  <th>{{ __('messages.no')}}</th>
+                  <th>{{ __('messages.photo')}}</th>
+                  <th>{{ __('messages.company')}}</th>
+                </thead>
+                <tbody>
+                <?php $i = 0;?>
+                @foreach($users as $user)
+                  <?php $i++; ?>
+                  <tr>
+                    <td>{{$i}}</td>
+                    @if($user->avatar)
+                    <td><img src="/uploads/avatars/{{$user->avatar}}" class="avatar-blacklist"></td>
+                    @else
+                    <td><img src="/material/img/user.png" class="avatar-blacklist"></td>
+                    @endif
+                    <td>{{$user->company}}</td>
+                  </tr>
+                @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">{{ __('messages.latest_blacklist')}}</h4>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th>{{ __('messages.no')}}</th>
+                  <th>{{ __('messages.photo')}}</th>
+                  <th>{{ __('messages.full_name')}}</th>
+                  <th>{{ __('messages.affected_entity')}}</th>
+                  <th>{{ __('messages.denounced_action')}}</th>
+                </thead>
+                <tbody>
+                <?php $i = 0;?>
+                @foreach($blacklists as $blacklist)
+                  <?php $i++; ?>
+                  <tr onclick="document.location.href='/blacklist/showdata/{{$blacklist->id}}'">
+                    <td>{{$i}}</td>
+                    @if($blacklist->avatar)
+                    <td><img src="/uploads/blacklists/{{$blacklist->avatar}}" class="avatar-blacklist"></td>
+                    @else
+                    <td><img src="/material/img/user.png" class="avatar-blacklist"></td>
+                    @endif
+                    <td>{{$blacklist->full_name}}</td>
+                    <td>{{$blacklist->affected_entity}}</td>
+                    <td>{{$blacklist->denounced_action}}</td>
+                  </tr>
+                @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
     <div class="navbar-wrapper">
 
       <div class="logo">
-        <a href="/home" class="navbar-brand">
+        <a href="#" class="navbar-brand" onclick="gotoHome()">
           <img src="{{ asset('material') }}/img/logo.png" width="100px" height="100px">
         </a>
       </div>
@@ -18,14 +18,14 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="/contact" class="nav-link">
+        <li class="nav-item" id="menu_contact_us">
+          <a href="#" onclick="showContactUs()" class="nav-link">
             <i class="material-icons">contacts</i> {{ __('messages.contact_us') }}
           </a>
         </li>
         @guest()
-        <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}">
-          <a href="{{ route('login') }}" class="nav-link">
+        <li class="nav-item{{ $activePage == 'login' ? ' active' : '' }}" id="menu_login">
+          <a href="#" onclick="showLogin()" class="nav-link">
             <i class="material-icons">fingerprint</i> {{ __('messages.login') }}
           </a>
         </li>

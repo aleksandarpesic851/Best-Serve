@@ -384,89 +384,14 @@
                           </div>
                         </div>
                       </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('provided_service') ? ' has-danger' : '' }}" data-toggle="tooltip" title="{{ __('messages.service_tooltip') }}">
-                              <input class="form-control{{ $errors->has('provided_service') ? ' is-invalid' : '' }}" value="{{ old('provided_service', $blacklist->provided_service) }}" name="provided_service" id="input-provided_service" type="text" placeholder="{{ __('messages.provided_service') }}" value="{{ old('provided_service') }}" />
-                              @if ($errors->has('provided_service'))
-                                <span id="provided_service-error" class="error text-danger" for="input-provided_service">{{ $errors->first('provided_service') }}</span>
-                              @endif
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('relationship_accomplice') ? ' has-danger' : '' }}">
-                              <input class="form-control{{ $errors->has('relationship_accomplice') ? ' is-invalid' : '' }}" value="{{ old('relationship_accomplice', $blacklist->relationship_accomplice) }}"  name="relationship_accomplice" id="input-relationship_accomplice" type="text" placeholder="{{ __('messages.relationship_accomplice') }}" value="{{ old('relationship_accomplice') }}" />
-                              @if ($errors->has('relationship_accomplice'))
-                                <span id="relationship_accomplice-error" class="error text-danger" for="input-relationship_accomplice">{{ $errors->first('relationship_accomplice') }}</span>
-                              @endif
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                       
                       <div class="col-12 col-lg-6">
                         <div class="row d-flex justify-content-center">
                           <div class="col-10">
-                            <div class="form-group{{ $errors->has('affected_entity') ? ' has-danger' : '' }}">
-                              <input class="form-control{{ $errors->has('affected_entity') ? ' is-invalid' : '' }}" value="{{ old('affected_entity', $blacklist->affected_entity) }}"  name="affected_entity" id="input-affected_entity" type="text" placeholder="{{ __('messages.affected_entity') }}" value="{{ old('affected_entity') }}"/>
-                              @if ($errors->has('affected_entity'))
-                                <span id="affected_entity-error" class="error text-danger" for="input-affected_entity">{{ $errors->first('affected_entity') }}</span>
-                              @endif
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('place_facts') ? ' has-danger' : '' }}">
-                              <input class="form-control{{ $errors->has('place_facts') ? ' is-invalid' : '' }}" value="{{ old('place_facts', $blacklist->place_facts) }}"  name="place_facts" id="input-place_facts" type="text" placeholder="{{ __('messages.place_facts') }}" value="{{ old('place_facts') }}"/>
-                              @if ($errors->has('place_facts'))
-                                <span id="place_facts-error" class="error text-danger" for="input-place_facts">{{ $errors->first('place_facts') }}</span>
-                              @endif
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('date_facts') ? ' has-danger' : '' }}">
-                              <input class="form-control" data-toggle="datepicker" value="{{ old('date_facts', $blacklist->date_facts) }}"  name="date_facts" id="input-date_facts" type="text" placeholder="{{ __('messages.date_facts') }}" value="" required />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('other_important_data') ? ' has-danger' : '' }}">
-                              <input class="form-control{{ $errors->has('other_important_data') ? ' is-invalid' : '' }}" value="{{ old('other_important_data', $blacklist->other_important_data) }}"  name="other_important_data" id="input-other_important_data" type="text" placeholder="{{ __('messages.other_important_data') }}" value="{{ old('other_important_data') }}"/>
-                              @if ($errors->has('other_important_data'))
-                                <span id="other_important_data-error" class="error text-danger" for="input-other_important_data">{{ $errors->first('other_important_data') }}</span>
-                              @endif
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-lg-6">
-                        <div class="row d-flex justify-content-center">
-                          <div class="col-10">
-                            <div class="form-group{{ $errors->has('denounced_action') ? ' has-danger' : '' }}" data-toggle="tooltip" title="{{ __('messages.denounced_action_tootip') }}">
-                              <input class="form-control{{ $errors->has('denounced_action') ? ' is-invalid' : '' }}" value="{{ old('denounced_action', $blacklist->denounced_action) }}"  name="denounced_action" id="input-denounced_action" type="text" placeholder="{{ __('messages.denounced_action') }}" value="{{ old('denounced_action') }}"/>
-                              @if ($errors->has('denounced_action'))
-                                <span id="denounced_action-error" class="error text-danger" for="input-denounced_action">{{ $errors->first('denounced_action') }}</span>
+                            <div class="form-group{{ $errors->has('provided_service') ? ' has-danger' : '' }}" data-toggle="tooltip" title="{{ __('messages.service_tooltip') }}">
+                              <input class="form-control{{ $errors->has('provided_service') ? ' is-invalid' : '' }}" value="{{ old('provided_service', $blacklist->provided_service) }}" name="accomplice" id="input-accomplice" type="text" placeholder="{{ __('messages.provided_service') }}" value="{{ old('accomplice') }}" />
+                              @if ($errors->has('provided_service'))
+                                <span id="provided_service-error" class="error text-danger" for="input-provided_service">{{ $errors->first('provided_service') }}</span>
                               @endif
                             </div>
                           </div>
@@ -494,24 +419,29 @@
 
                   </div>
                 </div>
-                <br><br>
-                <input type='hidden' id="image_names" name="image_names">
-                <div class="row padding5 justify-content-center" id="image_div">
-                </div>
-                <br><br>
 
-                <button id="add-new-image" class="btn btn-success" style="margin-left: 10%" type="button"><i class="glyphicon glyphicon-plus"></i>{{ __('messages.add') }}</button>
+                <input type='hidden' id="image_names" name="image_names">
+                <div class="row padding5" id="image_div">
+                </div>
 
                 <div class="row padding5">
-                  <div class="clone hide increment">
-                    <div class="col-6 control-group" style="margin-top:10px">
-                      <div class="row justify-content-center ">
-                        <img src="/material/img/image-upload.png" id="image-input0" class="file-upload-image">
+                  <div class="clone hide">
+                    <div class="control-group input-group col-sm-12" style="margin-top:10px">
+                      <div class="file-div">
+                        <input type="file" id="input0" name="contentfiles[]" accept="image/*">
                       </div>
-                      <div class="row justify-content-center ">
-                        <input type="file" id="input0" name="contentfiles[]" accept="image/*" data-input="false" onchange="changeImage(this)">
-                        <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> {{ __('messages.remove') }}</button>
+                      <div class="input-group-btn"> 
+                        <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> {{ __('messages.remove') }}</button>
                       </div>
+                    </div>
+                  </div>
+
+                  <div class="input-group control-group increment col-sm-12">
+                    <div class="file-div">
+                      <input type="file" id="input1" name="contentfiles[]" accept="image/*">
+                    </div>
+                    <div class="input-group-btn"> 
+                      <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>{{ __('messages.add') }}</button>
                     </div>
                   </div>
                 </div>
@@ -547,12 +477,14 @@
             let i = 0;
             content_images.forEach(function(element) {
 
-              image_html += '<div class="image-file-div">';
-              image_html += '<img src="/uploads/blacklist_contents/' + element + '" class="file-upload-image">';
-              image_html += '<img class="cancel-image" src="/material/img/cancel.png" style="display:none;" id="cancel_image_' + i + '">';
-              image_html += '<div class="text-center">';
-              image_html += '<button class="btn btn-success" id="btn_add_' + i + '" onclick="addImage(' + i + ')" type="button" style="display:none" >{{ __('messages.add')}}</button>';
-              image_html += '<button class="btn btn-danger" id="btn_remove_' + i + '" onclick="removeImage(' + i + ')" type="button">{{ __('messages.remove')}}</button>';
+              image_html += '<div class="col-sm-6 col-md-4 col-xl-3">';
+              image_html += '<div class="col">';
+              image_html += '<img src="/uploads/blacklist_contents/' + element + '" class="d-block content-holder">';
+              image_html += '<img class="cancel-image" src="/material/img/cancel.png" style="display:none" id="cancel_image_' + i + '">';
+              image_html += '<div class="row justify-content-center input-group-btn">';
+              image_html += '<button class="btn btn-success" onclick="addImage(' + i + ')" type="button">{{ __('messages.add')}}</button>';
+              image_html += '<button class="btn btn-danger" onclick="removeImage(' + i + ')" type="button">{{ __('messages.remove')}}</button>';
+              image_html += '</div>';
               image_html += '</div>';
               image_html += '</div>';
               remainImageIndexs.push(i);
@@ -571,7 +503,7 @@
       });
 
       
-      $("#add-new-image").click(function(){ 
+      $(".increment .btn-success").click(function(){ 
         var html = $(".clone").html();
         html = html.replace(/input0/g, 'input' + fileCnt);
         $(".increment").after(html);
@@ -624,8 +556,6 @@
         images.push(content_images[element]);
       });
       $('#image_names').val(images);
-      $('#btn_add_' + i).hide();
-      $('#btn_remove_' + i).show();
       console.log(images);
     }
 
@@ -640,23 +570,7 @@
         images.push(content_images[element]);
       });
       $('#image_names').val(images);
-      $('#btn_add_' + i).show();
-      $('#btn_remove_' + i).hide();
       console.log(images);
     }
-
-    function changeImage(input) {
-      const file = input.files[0];
-      const newImage = document.getElementById('image-' + input.id);
-      newImage.src = createObjectURL(file);
-      newImage.onload = function() {
-          window.URL.revokeObjectURL(this.src);
-      }
-    }
-
-    function revokeObjectURL(url) {
-        return (window.URL) ? window.URL.revokeObjectURL(url) : window.webkitURL.revokeObjectURL(url);
-    }
-
 </script>
 @endpush

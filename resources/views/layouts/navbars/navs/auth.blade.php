@@ -10,27 +10,24 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/locale/en">
+          <a style="padding:5px" href="/locale/en">
             <img src="/material/img/us_flag.png" class="lan-flag">
           </a>
         </li>
         <li class="nav-item">
-          <a href="/locale/ru">
+          <a style="padding:5px" href="/locale/ru">
             <img src="/material/img/ru_flag.png" class="lan-flag">
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img class="avatar-account" src="/uploads/avatars/{{ old('avatar', auth()->user()->avatar) }}">
-            <p class="d-lg-none d-md-block">
-              {{ __('messages.account') }}
-            </p>
+        <li class="nav-item">
+          <a style="padding:5px" href="/locale/ch">
+            <img src="/material/img/ch_flag.png" class="lan-flag">
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-            <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('messages.profile') }}</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('messages.logout') }}</a>
-          </div>
+        </li>
+        <li class="nav-item">
+          <a style="padding:5px" href="/locale/sp">
+            <img src="/material/img/sp_flag.png" class="lan-flag">
+          </a>
         </li>
       </ul>
     </div>

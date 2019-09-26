@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $blacklists = Blacklist::orderby('created_at', 'desc')->skip(0)->take(10)->get();
+        $users = User::orderby('created_at', 'desc')->skip(0)->take(10)->get();
         $dateVal = [];
         $userVal = [];
         $blackVal = [];
@@ -38,9 +39,6 @@ class HomeController extends Controller
             $dateVal[$i] = date('Y-m',strtotime("-" . (6-$i) . " months"));
         }
         
-        foreach($blacklists as $blacklist) {
-            $blacklist->content = substr($blacklist->content,0,200) . (strlen($blacklist->content) > 200 ? "..." : "");
-        }
-        return view('dashboard', compact(['blacklists', 'dateVal', 'userVal', 'blackVal', 'totalUser', 'totalBlacklist']));
+        return view('dashboard', compact(['users', 'blacklists', 'dateVal', 'userVal', 'blackVal', 'totalUser', 'totalBlacklist']));
     }
 }

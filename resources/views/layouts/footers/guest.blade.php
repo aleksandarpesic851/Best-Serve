@@ -1,18 +1,27 @@
 <footer class="footer">
     <div class="container">
         <div class="copyright float-right">
-            <ul>
+            <ul >
                 <li class="nav-item">
-                    <a class="nav-link" href="/locale/en">
+                    <a style="padding:5px" href="/locale/en">
                         <img src="/material/img/us_flag.png" class="lan-flag">
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/locale/ru">
+                    <a style="padding:5px" href="/locale/ru">
                         <img src="/material/img/ru_flag.png" class="lan-flag">
                     </a>
                 </li>
-                <li>
+                <li class="nav-item">
+                    <a style="padding:5px" href="/locale/ch">
+                        <img src="/material/img/ch_flag.png" class="lan-flag">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a style="padding:5px" href="/locale/sp">
+                        <img src="/material/img/sp_flag.png" class="lan-flag">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -32,6 +32,17 @@
                   </div>
 
                   <div class="col-sm-8">
+                    <div class="row">
+                      <label class="col-sm-3 col-form-label">{{ __('messages.company') }}</label>
+                      <div class="col-sm-7">
+                        <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}" data-toggle="tooltip" title="{{ __('messages.company_tooltip') }}">
+                          <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('messages.company') }}" value="{{ old('company', $user->company) }}" required />
+                          @if ($errors->has('company'))
+                            <span id="company-error" class="error text-danger" for="input-company">{{ $errors->first('company') }}</span>
+                          @endif
+                        </div>
+                      </div>
+                    </div>
 
                     <div class="row">
                       <label class="col-sm-3 col-form-label">{{ __('messages.name') }}</label>
@@ -44,6 +55,31 @@
                         </div>
                       </div>
                     </div>
+
+                    <div class="row">
+                      <label class="col-4 col-sm-3 col-md-3 col-form-label">{{ __('messages.contact_email') }}</label>
+                      <div class="col-8 col-sm-9 col-md-7">
+                        <div class="form-group{{ $errors->has('contact_email') ? ' has-danger' : '' }}"  data-toggle="tooltip" title="{{ __('messages.email_tooltip') }}">
+                          <input class="form-control{{ $errors->has('contact_email') ? ' is-invalid' : '' }}" name="contact_email" id="input-contact_email" type="email" placeholder="{{ __('messages.contact_email') }}"  value="{{ old('contact_email', $user->contact_email) }}" required aria-required="true" />
+                          @if ($errors->has('contact_email'))
+                            <span id="contact_email-error" class="error text-danger" for="input-contact_email">{{ $errors->first('contact_email') }}</span>
+                          @endif
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-4 col-sm-3 col-md-3 col-form-label">{{ __('messages.phone') }}</label>
+                      <div class="col-8 col-sm-9 col-md-7">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
+                          <input class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" id="input-phone" type="text" placeholder="{{ __('messages.phone') }}" value="{{ old('phone', $user->phone) }}" required  aria-required="true"/>
+                          @if ($errors->has('phone'))
+                            <span id="phone-error" class="error text-danger" for="input-phone">{{ $errors->first('phone') }}</span>
+                          @endif
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="row">
                       <label class="col-sm-3 col-form-label">{{ __('messages.id') }}</label>
                       <div class="col-sm-7">
@@ -71,18 +107,6 @@
                       <div class="col-sm-7">
                         <div class="form-group">
                           <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('messages.confirm_password') }}" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <label class="col-sm-3 col-form-label">{{ __('messages.company') }}</label>
-                      <div class="col-sm-7">
-                        <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('messages.company') }}" value="{{ old('company', $user->company) }}" required />
-                          @if ($errors->has('company'))
-                            <span id="company-error" class="error text-danger" for="input-company">{{ $errors->first('company') }}</span>
-                          @endif
                         </div>
                       </div>
                     </div>

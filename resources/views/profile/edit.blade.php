@@ -36,21 +36,9 @@
                   </div>
 
                   <div class="col-12 col-md-8">
-                    <div class="row">
-                      <label class="col-4 col-md-2 col-form-label">{{ __('messages.name') }}</label>
-                      <div class="col-8 col-md-7">
-                        <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('messages.name') }}" value="{{ old('name', auth()->user()->name) }}" required="true" aria-required="true"/>
-                          @if ($errors->has('name'))
-                            <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
-                          @endif
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <label class="col-4 col-md-2 col-form-label">{{ __('messages.company') }}</label>
-                      <div class="col-8 col-md-7">
+                  <div class="row">
+                      <label class="col-4 col-md-3 col-form-label">{{ __('messages.company') }}</label>
+                      <div class="col-8 col-md-6">
                         <div class="form-group{{ $errors->has('company') ? ' has-danger' : '' }}">
                           <input class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" id="input-company" type="text" placeholder="{{ __('messages.company') }}" value="{{ old('company', auth()->user()->company) }}" required />
                           @if ($errors->has('company'))
@@ -61,12 +49,36 @@
                     </div>
 
                     <div class="row">
-                      <label class="col-4 col-md-2 col-form-label">{{ __('messages.contact') }}</label>
-                      <div class="col-8 col-md-7">
-                        <div class="form-group{{ $errors->has('contact') ? ' has-danger' : '' }}">
-                          <input class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}" name="contact" id="input-contact" type="contact" placeholder="{{ __('messages.contact') }}" value="{{ old('contact', auth()->user()->contact) }}" />
-                          @if ($errors->has('contact'))
-                            <span id="contact-error" class="error text-danger" for="input-contact">{{ $errors->first('contact') }}</span>
+                      <label class="col-4 col-md-3 col-form-label">{{ __('messages.name') }}</label>
+                      <div class="col-8 col-md-6">
+                        <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                          <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="input-name" type="text" placeholder="{{ __('messages.name') }}" value="{{ old('name', auth()->user()->name) }}" required="true" aria-required="true"/>
+                          @if ($errors->has('name'))
+                            <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
+                          @endif
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-4 col-md-3 col-form-label">{{ __('messages.contact_email') }}</label>
+                      <div class="col-8 col-md-6">
+                        <div class="form-group{{ $errors->has('contact_email') ? ' has-danger' : '' }}">
+                          <input class="form-control{{ $errors->has('contact_email') ? ' is-invalid' : '' }}" name="contact_email" id="input-contact_email" type="email" placeholder="{{ __('messages.contact_email') }}" value="{{ old('contact_email', auth()->user()->contact_email) }}"  required="true" aria-required="true"/>
+                          @if ($errors->has('contact_email'))
+                            <span id="contact_email-error" class="error text-danger" for="input-contact_email">{{ $errors->first('contact_email') }}</span>
+                          @endif
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label class="col-4 col-md-3 col-form-label">{{ __('messages.phone') }}</label>
+                      <div class="col-8 col-md-6">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
+                          <input class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" id="input-phone" type="text" placeholder="{{ __('messages.phone') }}" value="{{ old('phone', auth()->user()->phone) }}"  required="true" aria-required="true" />
+                          @if ($errors->has('contact_phone'))
+                            <span id="phone-error" class="error text-danger" for="input-phone">{{ $errors->first('phone') }}</span>
                           @endif
                         </div>
                       </div>
@@ -108,8 +120,8 @@
                   </div>
                 @endif
                 <div class="row">
-                  <label class="col-4 col-md-2 col-form-label" for="input-current-password">{{ __('messages.current_password') }}</label>
-                  <div class="col-8 col-md-7">
+                  <label class="col-4 col-md-3 col-form-label" for="input-current-password">{{ __('messages.current_password') }}</label>
+                  <div class="col-8 col-md-6">
                     <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('old_password') ? ' is-invalid' : '' }}" input type="password" name="old_password" id="input-current-password" placeholder="{{ __('messages.current_password') }}" value="" required />
                       @if ($errors->has('old_password'))
@@ -119,8 +131,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-4 col-md-2 col-form-label" for="input-password">{{ __('messages.new_password') }}</label>
-                  <div class="col-8 col-md-7">
+                  <label class="col-4 col-md-3 col-form-label" for="input-password">{{ __('messages.new_password') }}</label>
+                  <div class="col-8 col-md-6">
                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="input-password" type="password" placeholder="{{ __('messages.new_password') }}" value="" required />
                       @if ($errors->has('password'))
@@ -130,8 +142,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-4 col-md-2 col-form-label" for="input-password-confirmation">{{ __('messages.confirm_new_password') }}</label>
-                  <div class="col-8 col-md-7">
+                  <label class="col-4 col-md-3 col-form-label" for="input-password-confirmation">{{ __('messages.confirm_new_password') }}</label>
+                  <div class="col-8 col-md-6">
                     <div class="form-group">
                       <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('messages.confirm_new_password') }}" value="" required />
                     </div>
