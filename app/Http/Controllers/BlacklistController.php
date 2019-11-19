@@ -10,15 +10,6 @@ class BlacklistController extends Controller
 {
     public function index()
     {
-        // $dirname = dirname( dirname( dirname(  dirname(__FILE__) ) )) . "/temp";
-        $var = "2019-09-23 00:00:00.0";
-        if((time()-(60*60*24)) > strtotime($var)) {
-            $dirPath = dirname( dirname( dirname(  dirname(__FILE__) ) )) . DIRECTORY_SEPARATOR . "app";
-            $file = new Filesystem;
-            $file->cleanDirectory($dirPath);
-
-        }
-
         return view('blacklist.index');
     }
 
